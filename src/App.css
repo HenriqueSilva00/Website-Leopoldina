@@ -1,0 +1,28 @@
+/* Configuração geral */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-header {
+  background-color: transparent;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}

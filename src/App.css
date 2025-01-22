@@ -7,8 +7,8 @@ body, html {
 
 .App {
   text-align: center;
-  background-color: black;
-  color: white;
+  background-color:bisque;
+  color: rgb(0, 0, 0);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,10 +17,11 @@ body, html {
 }
 
 .App-header {
-  background-color: transparent;
+
   padding: 20px;
 }
 
+ 
 h1 {
   font-size: 3rem;
   font-weight: bold;

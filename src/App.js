@@ -1,14 +1,21 @@
 import React from "react";
 import "./App.css";
+import "./components/header.css";
+import "./components/maincontent.css";
+import "./components/footer.css";
+import Header from "./components/header";
+import MainContent from "./components/maincontent";
+import Footer from "./components/footer";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 class="title">Leopoldina Website</h1>
-      </header>
+      <Header />
+      <MainContent />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
+

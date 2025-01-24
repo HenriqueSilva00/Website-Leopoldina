@@ -3,11 +3,7 @@
   display: flex;
   justify-content: space-between; /* Espaço entre os elementos do cabeçalho */
   align-items: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 60%, /* Cor preta sólida nos primeiros 90% */
-    rgba(0, 0, 0, 0) 100% /* Desbota para transparente nos últimos 10% */
-  );
+  background-color: black;
   padding: 10px 20px;
   position: sticky;
   top: 0; /* Faz o cabeçalho grudar no topo ao rolar */
@@ -15,7 +11,9 @@
   width: 100%;
   height: 90px;
   box-sizing: border-box; /* Garantir que padding e largura sejam consistentes */
-  transition: transform 0.9s ease, opacity 0.6s ease;
+  transition:
+    transform 0.9s ease,
+    opacity 0.6s ease;
 }
 
 /* Container do título alinhado à esquerda */
@@ -45,8 +43,6 @@
   opacity: 0; /* Reduz a opacidade para suavizar o efeito */
 }
 
-
-
 .icon-button {
   background: none; /* Remove qualquer fundo */
   border: none; /* Remove a borda */
@@ -54,7 +50,9 @@
   margin: 5px; /* Espaçamento externo */
   cursor: pointer; /* Cursor de interação */
   color: #cecece; /* Cor inicial do ícone */
-  transition: transform 0.3s, color 0.3s; /* Transições suaves */
+  transition:
+    transform 0.3s,
+    color 0.3s; /* Transições suaves */
   font-size: 32px; /* Tamanho inicial do ícone */
 }
 
@@ -70,10 +68,6 @@
 .icon-button:focus {
   outline: none; /* Remove a borda de foco padrão */
 }
-
-
-
-
 
 /* Botão de menu (hamburguer) à direita */
 .menu-toggle {
@@ -93,7 +87,6 @@
 .menu li {
   display: inline-block;
 }
-
 
 @media (max-width: 768px) {
   .header {
@@ -115,7 +108,4 @@
   .icon_container {
     display: none; /* Esconde os ícones no mobile */
   }
-
 }
-
-

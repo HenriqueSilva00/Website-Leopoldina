@@ -6,13 +6,14 @@
     "cra-template": "1.2.0",
     "font-awesome": "^4.7.0",
     "react": "^19.0.0",
+    "react-carousel-minimal": "^1.4.1",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-scripts": "^3.0.1",
     "web-vitals": "^4.2.4"
   },
   "engines": {
-  "node": "16.x"
+    "node": "16.x"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2"
   }
 }

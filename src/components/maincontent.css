@@ -1,20 +1,74 @@
 /* MAIN CONTENT*/
 .section {
-    padding: 50px 5%;
-    text-align: center;
-    min-height: 100vh;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 50px 5%;
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section1 {
+  background-color: #363636;
+}
+
+.section2 {
+  background-color: #474747;
+}
+
+.carousel-container {
+  text-align: center;
+  width: 80%;
+  height: 80vh;
+}
+
+.carousel-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.carousel-wrapper {
+  width: 100%; /* O carrossel interno vai ocupar toda a largura do seu contêiner */
+  height: 100%;
+  text-align: center;
+}
+
+.caption-style {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.slide-number-style {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.thumbnail-container {
+  display: flex; /* Usando flexbox para alinhar as miniaturas */
+  justify-content: center; /* Centraliza as miniaturas horizontalmente */
+  gap: 10px; /* Adiciona espaçamento entre as miniaturas */
+  margin-top: 10px; /* Adiciona um pequeno espaço entre o carrossel e as miniaturas */
+}
+
+.thumbnail-container img {
+  width: 50px; /* Ajuste o tamanho das miniaturas */
+  height: 50px; /* Ajuste o tamanho das miniaturas */
+  object-fit: cover; /* As miniaturas vão manter o corte adequado */
+  border-radius: 5px; /* Adiciona bordas arredondadas nas miniaturas */
+  cursor: pointer; /* Adiciona um cursor de mão nas miniaturas */
+  background-color: aqua;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column; /* Muda para layout em coluna em telas menores */
   }
-  
-  .section1 {
-    background-color: 	#363636;
+
+  .thumbnail-container {
+    margin-top: 10px;
+    margin-left: 0;
   }
-  
-  .section2 {
-    background-color: #474747
-  }
-  
-  .section3 {
-    background-color: #363636;
-  }
+}
+
+.section3 {
+  background-color: #363636;
+}

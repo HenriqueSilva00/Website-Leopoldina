@@ -1,0 +1,29 @@
+.footer {
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.footer p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon {
+  color: #fff;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.icon:hover {
+  color: #ffd166; /* tom dourado pastel */
+  transform: scale(1.2);
+}

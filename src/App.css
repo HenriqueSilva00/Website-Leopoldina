@@ -6,6 +6,97 @@ body {
   color: aliceblue;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.App {
+  font-family: "Poppins", sans-serif;
+  color: #6a4e23;
+}
+
+/* Estrutura geral das secções */
+.section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Palete de cores pastel */
+.homepage {
+  background-color: #f3e5ab;
+}
+
+.history {
+  background-color: #fff3d9;
+}
+
+.gallery {
+  background-color: #f3e5ab;
+}
+
+.contacts {
+  background-color: #fff3d9;
+}
+
+/* Títulos e texto */
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Botão de Scroll para cima */
+.scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  font-size: 1.8rem;
+  background-color: #ffd166;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.scrollToTop:hover {
+  background-color: #fbb13c;
+  transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 5%;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+  }
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .header {

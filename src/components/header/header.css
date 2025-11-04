@@ -1,0 +1,213 @@
+/* === CABEÇALHO GERAL === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 🔹 Garante alinhamento vertical central */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 90px;
+  box-sizing: border-box;
+  transition:
+    transform 0.9s ease,
+    opacity 0.6s ease;
+}
+
+/* Mostra/esconde o cabeçalho */
+.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* === TÍTULO === */
+.title_container {
+  display: flex;
+  align-items: center; /* 🔹 Centraliza verticalmente o texto */
+  flex: 1;
+}
+
+.title_container h1 {
+  font-family: "Font Awesome 6 Free", Arial, sans-serif; /* mesma base dos botões */
+  font-weight: 900; /* corresponde ao estilo dos ícones do FA */
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #fff8e7;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0);
+  letter-spacing: 1px;
+  background: linear-gradient(60deg, #ffd37a, #ffb300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title_container h1:hover {
+  color: #c7c7c7; /* Dourado pastel */
+}
+
+/* === ÍCONES (desktop) === */
+.icon_container {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* 🔹 Mais espaçamento entre botões */
+}
+
+.icon-button {
+  background-color: #fddf99; /* 🔹 Cinzento claro */
+  color: #000; /* 🔹 Letras pretas */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px; /* 🔹 Botões mais altos e largos */
+  font-size: 18px; /* 🔹 Texto ligeiramente maior */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre ícone e texto */
+}
+
+.icon-button i {
+  font-size: 16px;
+}
+
+.icon-button:hover {
+  background-color: #ffd166; /* 🔹 Hover um pouco mais escuro */
+  transform: translateY(-2px); /* 🔹 Pequeno destaque visual */
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  position: relative;
+}
+
+.menu-toggle::before,
+.menu-toggle::after,
+.menu-toggle span {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px; /* 🔹 Traço mais grosso */
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.8s ease;
+}
+
+/* Traços do ícone */
+.menu-toggle::before {
+  top: 0;
+}
+
+.menu-toggle span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle::after {
+  bottom: 0;
+}
+
+/* Pequena animação ao clicar (menu aberto) */
+.menu-open .menu-toggle::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.menu-open .menu-toggle::after {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.menu-open .menu-toggle span {
+  opacity: 0;
+}
+/* === MODO MOBILE === */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row; /* 🔹 Garante disposição lado a lado */
+    justify-content: space-between;
+    align-items: center; /* 🔹 Alinha tudo verticalmente */
+    padding: 0 1rem;
+    height: 75px;
+  }
+
+  .title_container {
+    flex: 1;
+    display: flex;
+    align-items: center; /* 🔹 Centraliza o título verticalmente */
+  }
+
+  .title_container h1 {
+    font-size: 1.5rem; /* 🔹 Reduz o tamanho do texto */
+    max-width: 260px; /* 🔹 Limita a largura para evitar quebra */
+    line-height: 1.1; /* 🔹 Ajusta altura das linhas */
+    text-align: left; /* 🔹 Mantém o alinhamento natural */
+    word-break: break-word; /* 🔹 Evita overflow */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .icon_container {
+    display: none; /* Esconde ícones no mobile */
+  }
+
+  .menu-open .icon_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.349);
+    width: 100%;
+    padding: 20px 0;
+    gap: 12px;
+  }
+
+  /* 🔹 Título do menu */
+  .menu-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .icon-button {
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 11px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.2s ease;
+  }
+
+  /* 🔹 Efeito hover */
+  .icon-button:hover {
+    color: #1d1d1d; /* Texto cinzento claro */
+    transform: scale(1.02);
+    height: 100%;
+  }
+}

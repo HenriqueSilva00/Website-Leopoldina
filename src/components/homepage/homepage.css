@@ -1,0 +1,18 @@
+.homepage-section {
+  padding: 50px 20px;
+  text-align: center;
+  min-height: 100vh;
+  color: #6a4e23;
+}
+
+.homepage-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.homepage-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}

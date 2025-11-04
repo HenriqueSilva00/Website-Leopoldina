@@ -5,6 +5,7 @@
   "dependencies": {
     "cra-template": "1.2.0",
     "font-awesome": "^4.7.0",
+    "primeicons": "^7.0.0",
     "react": "^19.0.0",
     "react-carousel-minimal": "^1.4.1",
     "react-dom": "^19.0.0",

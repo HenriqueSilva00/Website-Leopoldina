@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./contacts.css";
 
 const Contacts = () => {
   const [htmlContent, setHtmlContent] = useState("");
@@ -13,10 +14,10 @@ const Contacts = () => {
   }, []);
 
   return (
-    <div
-      className="contacts-section"
-      dangerouslySetInnerHTML={{ __html: htmlContent }}
-    />
+    <div className="contact-wrapper">
+      {/* HTML carregado dinamicamente */}
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    </div>
   );
 };
 

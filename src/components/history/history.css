@@ -1,0 +1,220 @@
+.timeline {
+  position: relative;
+  padding: 0 1rem;
+  color: #3e2e0f;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  max-width: 106rem; /* 1700px → 1700/16 */
+  height: 41rem; /* 800px → 800/16 */
+}
+
+.timeline-title {
+  font-size: 1rem;
+  color: #6a4e23;
+}
+
+/* ====== TIMELINE HORIZONTAL ====== */
+.timeline-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100rem; /* 1600px */
+  height: 37.5rem; /* 600px */
+  margin: 1rem auto;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 3rem;
+}
+
+/* Linha central */
+.timeline-line {
+  position: absolute;
+  top: 46%; /* Linha central */
+  left: 0;
+  right: 0;
+  height: 0.25rem; /* 4px */
+  background-color: #6a4e23;
+  border-radius: 0.125rem;
+  z-index: 1;
+}
+
+/* Cada ponto/evento */
+.timeline-item {
+  position: relative;
+  width: 12rem;
+  text-align: center;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.timeline-item.top {
+  transform: translateY(-7.5rem); /* 120px */
+}
+
+.timeline-item.bottom {
+  transform: translateY(7.5rem);
+}
+
+.timeline-content {
+  background-color: #f3e5ab;
+  border: 0.125rem solid #d8b26e; /* 2px */
+  padding: 1rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.1); /* 3px 8px */
+  height: 10rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: #6a4e23;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 🔹 Bolinha central alinhada à linha */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 1rem; /* 16px */
+  height: 1rem;
+  background-color: #6a4e23;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Bolinha para eventos no topo → por baixo da caixa */
+.timeline-item.top::before {
+  top: 100%; /* exatamente por baixo da caixa */
+  margin-top: 0.9rem; /* espaço entre a caixa e a linha */
+}
+
+/* Bolinha para eventos em baixo → por cima da caixa */
+.timeline-item.bottom::before {
+  bottom: 100%; /* exatamente por cima da caixa */
+  margin-bottom: 0.8rem;
+}
+
+/* ====== 🟤 RESPONSIVIDADE ====== */
+
+/* ====== 🟤 RESPONSIVIDADE (VERTICAL) ====== */
+
+/* Tablets e Telemóveis (≤1024px) */
+@media (max-width: 1024px) {
+  .timeline {
+    position: relative;
+    padding: 0 1rem;
+    color: #3e2e0f;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    max-width: 106rem; /* 1700px → 1700/16 */
+    height: 130rem; /* 800px → 800/16 */
+  }
+
+  .timeline-container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    overflow-x: visible;
+    padding: 2rem 0;
+    height: 116rem;
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Linha vertical central */
+  .timeline-line {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.25rem;
+    height: 100%;
+    background-color: #6a4e23;
+  }
+
+  /* Itens verticais alternados */
+  .timeline-item {
+    width: 100%;
+    position: relative;
+    margin: 4rem 0;
+    transform: none;
+  }
+
+  /* Bolinha central */
+  .timeline-item::before {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    background-color: #6a4e23;
+    border-radius: 50%;
+  }
+
+  /* Alternar o conteúdo para os lados */
+  .timeline-item:nth-child(odd) .timeline-content {
+    width: 50%;
+    margin-left: 38%;
+    margin-right: auto;
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 38%;
+    text-align: left;
+  }
+
+  .timeline-content {
+    height: auto;
+    width: 300px;
+    background-color: rgb(255, 0, 0);
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Telemóveis pequenos (≤600px) */
+@media (max-width: 600px) {
+  .timeline-line {
+    left: 0.5rem;
+    transform: none;
+  }
+
+  .timeline-item {
+    margin: 3rem 0;
+  }
+
+  .timeline-item::before {
+    left: 0.5rem;
+    transform: none;
+  }
+
+  /* Todos os blocos à direita da linha */
+  .timeline-content {
+    width: 85%;
+    margin-left: 2rem;
+    text-align: left;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem;
+  }
+}

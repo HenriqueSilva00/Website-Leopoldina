@@ -1,18 +1,158 @@
-.homepage-section {
-  padding: 50px 20px;
-  text-align: center;
-  min-height: 100vh;
-  color: #6a4e23;
+.main-container {
+  width: 100%;
+  height: 90vh; /* ocupa toda a altura do ecrã */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.homepage-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.homepage-section p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 600px;
+.hero-section {
+  width: 100%;
+  height: 55%;
   margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden; /* impede que a imagem ultrapasse os cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* garante que a imagem cobre a área sem distorcer */
+  display: block;
+}
+
+/* Secção inferior (duas colunas) */
+.bottom-section {
+  display: flex;
+  width: 92vw;
+  height: 35%;
+  margin: 15px auto;
+  gap: 1rem; /* espaço entre colunas */
+}
+
+.left-container {
+  width: 60%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo do texto */
+.bakery-title {
+  font-size: 2rem;
+  color: #8b4513;
+  margin-bottom: 1rem;
+}
+
+.bakery-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 100%;
+  text-align: justify;
+}
+/* Coluna direita (30%) */
+.right-container {
+  width: 40%;
+  background-color: #e1bee7; /* lilás placeholder */
+  border-radius: 10px;
+}
+
+.bottom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* garante que a imagem cobre a área sem distorcer */
+  display: block;
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .bottom-section {
+    gap: 0.8rem;
+  }
+
+  .left-container {
+    padding: 1.5rem 2rem;
+  }
+
+  .bakery-title {
+    font-size: 1.8rem;
+  }
+
+  .bakery-description {
+    font-size: 1rem;
+  }
+}
+
+/* Telemóveis */
+@media (max-width: 768px) {
+  .main-container {
+    height: auto; /* permite scroll natural */
+  }
+
+  .hero-section {
+    height: 45vh;
+    border-radius: 10px;
+  }
+
+  .bottom-section {
+    flex-direction: column; /* empilha os blocos */
+    height: auto;
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-container,
+  .right-container {
+    width: fit-content;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .left-container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.2rem;
+    overflow: hidden; /* Impede que o texto ultrapasse o container */
+    word-wrap: break-word; /* Quebra palavras longas */
+  }
+
+  .bakery-title {
+    text-align: center; /* ✅ Centraliza o título */
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem; /* Espaço entre título e texto */
+  }
+
+  .bakery-description {
+    text-align: justify; /* ✅ Justifica o texto */
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin: 0 auto; /* Centraliza horizontalmente dentro do container */
+    max-width: 100%; /* Garante que o texto não encoste às bordas */
+    overflow-wrap: break-word; /* Evita overflow de palavras longas */
+  }
+
+  .bottom-image {
+    height: 45vh;
+    border-radius: 10px;
+  }
+}
+
+/* Ecrãs muito pequenos */
+@media (max-width: 480px) {
+  .bakery-title {
+    font-size: 1.3rem;
+  }
+
+  .bakery-description {
+    font-size: 0.9rem;
+  }
+
+  .bottom-image {
+    height: 200px;
+  }
 }

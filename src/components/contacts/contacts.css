@@ -1,0 +1,334 @@
+.contact-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-header p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+  margin-bottom: 40px;
+}
+
+.contact-container:hover {
+  transform: scale(1.01);
+  background-color: #f9fafb;
+  box-shadow: 0 12px 150px rgba(0, 0, 0, 0.25); /* sombra mais profunda e ampla */
+}
+
+/* Lado esquerdo - Mapa */
+.contact-map {
+  width: 50%;
+  height: 100%;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.contact-info {
+  background-color: #fcf7eb;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* impede a imagem de sair da área */
+}
+
+/* Linha vertical preta */
+.contact-info::before {
+  content: "";
+  position: absolute;
+  left: 8%; /* distância da margem esquerda */
+  top: 5%; /* começa um pouco abaixo do topo */
+  bottom: 5%;
+  width: 3px; /* espessura da linha */
+  background-color: #000; /* cor preta */
+  border-radius: 1px;
+}
+
+/* Lista de informações */
+.contact-info ul {
+  list-style: none;
+  padding-left: 100px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* espaçamento vertical entre os itens */
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.contact-info i {
+  color: #000000;
+  margin-right: 12px;
+  font-size: 1.4rem;
+}
+
+.contact-info span {
+  font-weight: 500;
+}
+
+.contact-details a {
+  color: #000000; /* usa a mesma cor do texto */
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  color: #ff0000; /* muda a cor no hover */
+  text-decoration: underline;
+}
+
+.contact-details li i {
+  display: inline-block;
+  width: 22px; /* mesma largura para todos os ícones */
+  text-align: center;
+}
+
+.schedule-line {
+  margin-left: 1.5rem; /* ligeiro recuo para alinhar sob o "Horário:" */
+}
+
+/* ===== Logo dentro do card ===== */
+.contact-wraper {
+  display: flex;
+  justify-content: flex-end; /* alinha à direita */
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+}
+
+.contact-wraper img {
+  width: 300px; /* tamanho do logo no desktop */
+  height: auto;
+}
+
+/* ======== ESTILO TABLET (769px a 1024px) ======== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .contact-container {
+    flex-direction: column; /* empilha mapa e infos */
+    width: 90vw;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .contact-map {
+    width: 100%;
+    height: 45vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+  }
+
+  /* 🔹 Contactos em colunas lado a lado */
+  .contact-info {
+    width: 100%;
+    height: auto;
+    padding: 2rem 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: row; /* ➜ lado a lado */
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fcf7eb;
+    gap: 2rem;
+  }
+
+  /* 🔹 Linha vertical preta no lado esquerdo */
+  .contact-info::before {
+    content: "";
+    position: absolute;
+    left: 8%; /* mesma posição da versão desktop */
+    top: 14%;
+    bottom: 4%;
+    width: 3px;
+    background-color: #000;
+    border-radius: 1px;
+  }
+
+  /* 🔹 Lista de informações (lado esquerdo) */
+  .contact-info ul {
+    width: 40%;
+    list-style: none;
+    padding: 4rem 4rem 0 4rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-info li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #000;
+  }
+
+  .contact-info i {
+    font-size: 1.3rem;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  /* 🔹 Títulos e texto */
+  .contact-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+    max-width: 800px;
+  }
+
+  /* 🔹 Logo ajustado (lado direito) */
+  .contact-wraper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rem;
+    margin-right: 5rem;
+  }
+
+  .contact-wraper img {
+    width: 350px;
+  }
+}
+
+/* ======== ESTILO MOBILE / RESPONSIVO ======== */
+@media (max-width: 768px) {
+  /* Texto superior ao card */
+  .contact-header-text {
+    text-align: justify;
+    padding: 1 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Container geral */
+  .contact-container {
+    flex-direction: column;
+    width: 85vw; /* ligeiramente mais largo para tablets/mobiles */
+    height: auto;
+    padding: 1rem; /* dá respiro interno */
+  }
+
+  /* Mapa */
+  .contact-map {
+    width: 100%;
+    height: 50vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem; /* separação da secção de contactos */
+    border-radius: 8px;
+  }
+
+  .contact-info {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem; /* padding lateral leve */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+
+  .contact-info ul {
+    padding-left: 10px;
+  }
+
+  .contact-info::before {
+    display: none !important;
+    content: none;
+  }
+
+  .contact-details {
+    width: 100%; /* ocupa toda a largura do container */
+    display: flex;
+    flex-direction: column; /* 🔹 garante lista vertical */
+    gap: 0.4rem; /* espaçamento entre itens */
+    padding-left: 0; /* remove indentação */
+    margin: 0; /* remove margens extra */
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .contact-details li {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    line-height: 1.4;
+  }
+
+  .contact-details i {
+    margin-right: 0.5rem; /* espaço entre ícone e texto */
+    flex-shrink: 0;
+  }
+
+  .contact-details span,
+  .contact-details a {
+    flex: 1; /* 🔹 faz o texto ocupar o resto da linha */
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Logo ajustado para mobile */
+  .contact-logo {
+    position: static; /* deixa fluir naturalmente após as informações */
+    display: block;
+    margin: 2rem auto 1rem; /* centraliza e afasta das infos */
+    width: 100px;
+    opacity: 0.9;
+  }
+
+  /* Wrapper do logo */
+  .contact-wraper {
+    display: flex;
+    flex-direction: column; /* ✅ garante empilhamento vertical */
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 0.5rem;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .contact-wraper img {
+    width: 300px;
+    opacity: 1;
+  }
+}

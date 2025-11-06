@@ -1,15 +1,47 @@
 .footer {
+  position: relative;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px 40px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../assets/filhoses.jpg"); /* 🔹 caminho ajustado */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.8s ease-in-out;
+}
+
+/* 🔹 Frase principal */
+.footer-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffd166; /* tom dourado pastel */
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Camada interna */
+.footer-overlay {
   position: relative;
+  z-index: 2;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.footer-description {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffeec2;
+  margin-bottom: 12px;
 }
 
 .footer p {
-  font-size: 16px;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  margin-bottom: 0px;
+  opacity: 0.9;
 }
 
+/* Ícones sociais */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -24,6 +56,68 @@
 }
 
 .icon:hover {
-  color: #ffd166; /* tom dourado pastel */
+  color: #ffd166;
   transform: scale(1.2);
+}
+
+/* Efeito de fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔹 Suave fade entre o main e o footer */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    #fff3d9 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.2);
+  color: #ffd166; /* tom pastel dourado */
+}
+.footer-link {
+  color: #ffffff;
+  padding: 0px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  color: #1e90ff; /* azul */
+  text-decoration: underline;
+  transform: scale(1.05);
 }

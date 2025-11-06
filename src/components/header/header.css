@@ -26,28 +26,35 @@
   opacity: 0;
 }
 
-/* === TÍTULO === */
 .title_container {
   display: flex;
-  align-items: center; /* 🔹 Centraliza verticalmente o texto */
-  flex: 1;
+  align-items: center; /* alinha verticalmente o logo e o texto */
+  justify-content: center; /* centra tudo na página */
+  gap: 0.8rem; /* espaço entre o logo e o texto */
+  margin: 2rem 0;
 }
 
-.title_container h1 {
-  font-family: "Font Awesome 6 Free", Arial, sans-serif; /* mesma base dos botões */
-  font-weight: 900; /* corresponde ao estilo dos ícones do FA */
+.santo-logo {
+  width: 35px; /* tamanho do logo */
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  margin-left: 45px;
+}
+
+.title-logo {
+  width: 230px; /* tamanho do logo */
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+.title {
   font-size: 2.2rem;
-  text-transform: uppercase;
-  color: #fff8e7;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0);
+  font-weight: 700;
+  color: #5a2d0c;
+  margin: 0;
   letter-spacing: 1px;
-  background: linear-gradient(60deg, #ffd37a, #ffb300);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.title_container h1:hover {
-  color: #c7c7c7; /* Dourado pastel */
 }
 
 /* === ÍCONES (desktop) === */
@@ -58,17 +65,17 @@
 }
 
 .icon-button {
-  background-color: #fddf99; /* 🔹 Cinzento claro */
+  background-color: #f3e5ab;
   color: #000; /* 🔹 Letras pretas */
   border: none;
   border-radius: 8px;
-  padding: 12px 20px; /* 🔹 Botões mais altos e largos */
+  padding: 10px 20px; /* 🔹 Botões mais altos e largos */
   font-size: 18px; /* 🔹 Texto ligeiramente maior */
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 8px; /* Espaço entre ícone e texto */
+  gap: 10px; /* Espaço entre ícone e texto */
 }
 
 .icon-button i {
@@ -156,12 +163,29 @@
     word-break: break-word; /* 🔹 Evita overflow */
   }
 
+  .santo-logo {
+    width: 35px; /* tamanho do logo */
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    margin-left: -30px;
+  }
+
+  .title-logo {
+    width: 230px; /* tamanho do logo */
+    height: auto;
+    display: block;
+    margin-top: 20px;
+  }
+
   .menu-toggle {
     display: block;
+    color: #000;
   }
 
   .icon_container {
     display: none; /* Esconde ícones no mobile */
+    color: #000;
   }
 
   .menu-open .icon_container {
@@ -171,7 +195,7 @@
     position: absolute;
     top: 75px;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.349);
+    background-color: rgb(0, 0, 0);
     width: 100%;
     padding: 20px 0;
     gap: 12px;
@@ -209,5 +233,78 @@
     color: #1d1d1d; /* Texto cinzento claro */
     transform: scale(1.02);
     height: 100%;
+  }
+}
+
+/* === MODO TABLET === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 85px;
+  }
+
+  .title_container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 🔹 Mantém o título centrado */
+    gap: 0.5rem;
+  }
+
+  .title_container h1 {
+    font-size: 2rem; /* 🔹 Maior que no mobile, menor que no desktop */
+    max-width: 340px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .title-logo {
+    width: 60px; /* 🔹 Logo ligeiramente maior */
+    height: auto;
+    display: block;
+  }
+
+  .santo-logo {
+    width: 45px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: -10px;
+  }
+
+  .menu-toggle {
+    display: none; /* 🔹 Esconde o ícone de menu hambúrguer */
+  }
+
+  .icon_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .icon-button {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .icon-button:hover {
+    color: #8b4513;
+    transform: scale(1.1);
+  }
+
+  /* 🔹 Ajuste de espaçamentos gerais */
+  .menu-title {
+    display: none; /* não há título de menu no tablet */
   }
 }

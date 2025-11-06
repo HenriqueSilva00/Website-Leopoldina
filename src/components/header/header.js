@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import "./header.css";
-import paoHeader from "../../assets/paoHeader.jpg";
 
 const Header = () => {
   const [htmlContent, setHtmlContent] = useState("");
@@ -74,12 +73,6 @@ const Header = () => {
     <div
       ref={headerRef}
       className={`header-wrapper ${isVisible ? "visible" : "hidden"} ${isMenuOpen ? "menu-open" : ""}`}
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${paoHeader})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
     >
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>

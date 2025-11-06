@@ -1,4 +1,122 @@
-.gallery-section h2 {
-  font-family: "Arial", sans-serif;
+.gallery-container {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #5a3e1b; /* tom quente, rústico */
+}
+
+.gallery-header h2 {
+  font-size: 2rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4b2e10;
+}
+
+.gallery-header p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #6b4c2e;
+}
+
+/* === GRID TIPO MASONRY === */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas no desktop */
+  gap: 1rem;
+}
+
+.gallery-item {
+  cursor: zoom-in;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === MODAL (VISUALIZAÇÃO EM ZOOM) === */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.modal-description {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* === ANIMAÇÕES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr); /* tablets ou laptops pequenos */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* mobile: 3 colunas */
+  }
 }

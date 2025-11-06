@@ -1,6 +1,6 @@
 /* Estilos globais */
 body {
-  background-color: #363636;
+  background-color: #f3e5ab;
   margin: 0;
   font-family: Arial, sans-serif;
   color: aliceblue;
@@ -17,15 +17,16 @@ html {
 
 /* Estrutura geral das secções */
 .section {
-  min-height: 100vh;
+  min-height: 90vh;
   width: 100%;
-  padding: 60px 8%;
+  padding: 20px 8%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.1); /* 🔹 linha fina, semi-transparente */
 }
 
 /* Palete de cores pastel */

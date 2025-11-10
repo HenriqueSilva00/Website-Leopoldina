@@ -1,220 +1,281 @@
 .timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+  width: 100%;
   position: relative;
-  padding: 0 1rem;
-  color: #3e2e0f;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  max-width: 106rem; /* 1700px → 1700/16 */
-  height: 41rem; /* 800px → 800/16 */
+  padding: 40px 20px; /* espaço interno para a "moldura" */
+  background-color: #fff3d9;
+  border: 8px double #fbb13c; /* borda dupla em amarelo torrado */
+  border-radius: 15px; /* cantos arredondados */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* efeito de profundidade */
 }
 
-.timeline-title {
-  font-size: 1rem;
-  color: #6a4e23;
-}
-
-/* ====== TIMELINE HORIZONTAL ====== */
-.timeline-container {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100rem; /* 1600px */
-  height: 37.5rem; /* 600px */
-  margin: 1rem auto;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 3rem;
-}
-
-/* Linha central */
-.timeline-line {
+/* Opcional: adicionar efeito de moldura interna */
+.timeline::before {
+  content: "";
   position: absolute;
-  top: 46%; /* Linha central */
-  left: 0;
-  right: 0;
-  height: 0.25rem; /* 4px */
-  background-color: #6a4e23;
-  border-radius: 0.125rem;
-  z-index: 1;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.4); /* linha interna translúcida */
+  border-radius: 12px;
+  pointer-events: none; /* não interfere em interações */
 }
 
-/* Cada ponto/evento */
-.timeline-item {
-  position: relative;
-  width: 12rem;
+.timeline-header {
   text-align: center;
-  flex-shrink: 0;
-  z-index: 2;
+  margin-bottom: 30px;
 }
 
-.timeline-item.top {
-  transform: translateY(-7.5rem); /* 120px */
+.timeline-header h2 {
+  font-size: 2rem;
+  color: #d9a441; /* amarelo torrado */
+  margin-bottom: 10px;
+  font-family: "Georgia", serif;
 }
 
-.timeline-item.bottom {
-  transform: translateY(7.5rem);
-}
-
-.timeline-content {
-  background-color: #f3e5ab;
-  border: 0.125rem solid #d8b26e; /* 2px */
-  padding: 1rem;
-  border-radius: 0.625rem;
-  box-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.1); /* 3px 8px */
-  height: 10rem;
-}
-
-.timeline-content h3 {
-  font-size: 1.2rem;
-  color: #6a4e23;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-content p {
-  font-size: 0.9rem;
+.timeline-header p {
+  font-size: 1rem;
+  color: #5a3e1b; /* marrom escuro */
+  max-width: 50rem;
+  margin: 0 auto;
   line-height: 1.5;
 }
 
-/* 🔹 Bolinha central alinhada à linha */
-.timeline-item::before {
+.timeline ol {
+  font-size: 0;
+  width: 100vw;
+  padding: 250px 0;
+  transition: all 1s;
+}
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 180px;
+  height: 4px;
+  background: #d9a441; /* Amarelo torrado */
+  border-radius: 2px;
+}
+
+.timeline ol li::after {
   content: "";
   position: absolute;
-  left: 50%;
-  width: 1rem; /* 16px */
-  height: 1rem;
-  background-color: #6a4e23;
+  top: 50%;
+  left: 100%;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
   border-radius: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
+  background: #f0a0a0; /* bola em tom bege */
+  border: 2px solid #d9a441; /* contorno amarelo torrado */
 }
 
-/* Bolinha para eventos no topo → por baixo da caixa */
-.timeline-item.top::before {
-  top: 100%; /* exatamente por baixo da caixa */
-  margin-top: 0.9rem; /* espaço entre a caixa e a linha */
+.timeline ol li:last-child {
+  width: 160px; /* mesma largura dos outros itens */
 }
 
-/* Bolinha para eventos em baixo → por cima da caixa */
-.timeline-item.bottom::before {
-  bottom: 100%; /* exatamente por cima da caixa */
-  margin-bottom: 0.8rem;
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
 }
 
-/* ====== 🟤 RESPONSIVIDADE ====== */
+.timeline ol li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #f0a0a0; /* Bola em tom bege */
+  border: 2px solid #d9a441; /* Contorno amarelo torrado */
+}
 
-/* ====== 🟤 RESPONSIVIDADE (VERTICAL) ====== */
+.timeline ol li div {
+  position: absolute;
+  left: calc(100% + 7px);
+  width: 280px;
+  padding: 15px;
+  font-size: 1rem;
+  white-space: normal;
+  color: #5a3e1b; /* Marrom escuro para texto */
+  background: #fff3e0; /* Fundo suave creme */
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
 
-/* Tablets e Telemóveis (≤1024px) */
-@media (max-width: 1024px) {
+.timeline ol li div::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ol li:nth-child(odd) div {
+  top: -16px;
+  transform: translateY(-100%);
+}
+
+.timeline ol li:nth-child(odd) div::before {
+  top: 100%;
+  border-width: 8px 8px 0 0;
+  border-color: #fff3e0 transparent transparent transparent;
+}
+
+.timeline ol li:nth-child(even) div {
+  top: calc(100% + 16px);
+}
+
+.timeline ol li:nth-child(even) div::before {
+  top: -8px;
+  border-width: 8px 0 0 8px;
+  border-color: transparent transparent transparent #fff3e0;
+}
+
+.timeline time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #d9a441; /* Destaque para a data em amarelo torrado */
+  font-family: "Georgia", serif;
+}
+
+/* TIMELINE ARROWS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline .arrow {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #fbb13c;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative; /* importante */
+  overflow: hidden; /* garante que nada "vaze" */
+  margin: 5px;
+}
+
+.arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrow-icon {
+  font-size: 20px;
+  color: white;
+  user-select: none;
+  display: inline-block;
+  transition: transform 0.2s; /* animação só do ícone */
+}
+
+.arrow:hover:not(:disabled) .arrow-icon {
+  transform: scale(1.2); /* aumenta só a seta, não o botão */
+}
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 768px) {
   .timeline {
-    position: relative;
-    padding: 0 1rem;
-    color: #3e2e0f;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    max-width: 106rem; /* 1700px → 1700/16 */
-    height: 130rem; /* 800px → 800/16 */
-  }
-
-  .timeline-container {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    overflow-x: visible;
-    padding: 2rem 0;
-    height: 116rem;
-    background-color: aquamarine;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Linha vertical central */
-  .timeline-line {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0.25rem;
-    height: 100%;
-    background-color: #6a4e23;
-  }
-
-  /* Itens verticais alternados */
-  .timeline-item {
+    white-space: nowrap;
+    overflow-x: hidden;
     width: 100%;
     position: relative;
-    margin: 4rem 0;
-    transform: none;
+    padding: 40px 20px; /* espaço interno para a "moldura" */
+    background-color: #fff3d9;
+    border: 8px double #fbb13c; /* borda dupla em amarelo torrado */
+    border-radius: 15px; /* cantos arredondados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* efeito de profundidade */
   }
 
-  /* Bolinha central */
-  .timeline-item::before {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1rem;
-    height: 1rem;
-    background-color: #6a4e23;
-    border-radius: 50%;
+  .timeline-header {
+    text-align: center;
+    width: 100%;
+    padding: 0 15px; /* padding lateral */
+    margin-bottom: 20px;
   }
 
-  /* Alternar o conteúdo para os lados */
-  .timeline-item:nth-child(odd) .timeline-content {
-    width: 50%;
-    margin-left: 38%;
-    margin-right: auto;
-    text-align: right;
+  .timeline-header h2 {
+    font-size: 1.5rem;
+    color: #ca4305;
+    margin-bottom: 8px;
   }
 
-  .timeline-item:nth-child(even) .timeline-content {
-    width: 50%;
-    margin-left: auto;
-    margin-right: 38%;
-    text-align: left;
-  }
-
-  .timeline-content {
-    height: auto;
-    width: 300px;
-    background-color: rgb(255, 0, 0);
-  }
-
-  .timeline-content h3 {
-    font-size: 1.1rem;
-  }
-
-  .timeline-content p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Telemóveis pequenos (≤600px) */
-@media (max-width: 600px) {
-  .timeline-line {
-    left: 0.5rem;
-    transform: none;
-  }
-
-  .timeline-item {
-    margin: 3rem 0;
-  }
-
-  .timeline-item::before {
-    left: 0.5rem;
-    transform: none;
-  }
-
-  /* Todos os blocos à direita da linha */
-  .timeline-content {
-    width: 85%;
-    margin-left: 2rem;
-    text-align: left;
-  }
-
-  .timeline-content h3 {
+  .timeline-header p {
     font-size: 1rem;
+    color: #5a3e1b;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
-  .timeline-content p {
-    font-size: 0.85rem;
+  .timeline ol,
+  .timeline ol li {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .timeline ol {
+    padding: 0;
+    transform: none !important;
+  }
+
+  .timeline ol li {
+    display: block;
+    width: 100%; /* ocupa toda a largura do container */
+    height: auto; /* altura dinâmica conforme conteúdo */
+    background: transparent;
+    margin: 0 0 20px; /* espaçamento entre itens */
+  }
+  .timeline ol li:first-child {
+    margin-top: 25px;
+  }
+
+  .timeline ol li:not(:first-child) {
+    margin-left: auto;
+  }
+
+  .timeline ol li div {
+    position: static;
+    width: 20rem; /* largura máxima do container */
+    height: auto !important;
+    margin: 0 auto 25px;
+    padding: 10px; /* padding interno */
+    box-sizing: border-box; /* inclui padding na largura */
+    word-wrap: break-word; /* garante quebra de texto longo */
+    border: 1px solid #d9a441; /* amarelo torrado */
+    border-radius: 8px; /* cantos arredondados */
+    background-color: #fff3e0; /* fundo bege claro */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* leve sombra para profundidade */
+  }
+
+  .timeline ol li:nth-child(odd) div {
+    transform: none;
+  }
+
+  .timeline ol li:nth-child(odd) div::before,
+  .timeline ol li:nth-child(even) div::before {
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: none;
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 25px;
+  }
+
+  .timeline ol li:last-child,
+  .timeline ol li:nth-last-child(2) div::before,
+  .timeline ol li:not(:last-child)::after,
+  .timeline .arrows {
+    display: none;
   }
 }

@@ -237,6 +237,17 @@
     line-height: 1.5;
   }
 
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+  }
+
+  .contact-info li {
+    font-size: 1rem;
+  }
   /* Container geral */
   .contact-container {
     flex-direction: column;

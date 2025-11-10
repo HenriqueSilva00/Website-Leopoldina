@@ -15,10 +15,11 @@ const Footer = () => {
       }}
     >
       <h2 className="footer-title">Tradição é sabor</h2>
+
       {/* Redes sociais */}
       <div className="social-icons">
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/leopoldina.lele.7"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -33,16 +34,28 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* Texto e política */}
+      {/* Texto e links */}
       <p>© 2025 Leopoldina Website. Todos os direitos reservados.</p>
-      <a
-        href="/view/politica-privacidade.html"
-        className="footer-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Política de Privacidade
-      </a>
+
+      <div className="footer-links">
+        <a
+          href="/view/politica-privacidade.html"
+          className="footer-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Política de Privacidade
+        </a>
+        <span className="footer-separator"> | </span>
+        <a
+          href="https://www.livroreclamacoes.pt/Inicio/"
+          className="footer-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Livro de Reclamações
+        </a>
+      </div>
     </footer>
   );
 };

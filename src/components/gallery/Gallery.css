@@ -119,4 +119,12 @@
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr); /* mobile: 3 colunas */
   }
+
+  .gallery-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .gallery-header p {
+    font-size: 1rem;
+  }
 }

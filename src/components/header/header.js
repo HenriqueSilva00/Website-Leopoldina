@@ -1,19 +1,10 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./header.css";
 
 const Header = () => {
   const [htmlContent, setHtmlContent] = useState("");
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef(null);
-
-  // 🔹 Lógica para esconder o header ao fazer scroll
-  const handleScroll = useCallback(() => {
-    const currentScrollY = window.scrollY;
-    setIsVisible(currentScrollY <= lastScrollY);
-    setLastScrollY(currentScrollY);
-  }, [lastScrollY]);
 
   // 🔹 Carrega o HTML do header
   useEffect(() => {
@@ -23,7 +14,7 @@ const Header = () => {
       .catch((err) => console.error("Erro ao carregar HTML do header:", err));
   }, []);
 
-  // 🔹 Eventos: scroll + clique
+  // 🔹 Eventos de clique (menu + scroll suave)
   useEffect(() => {
     if (!htmlContent || !headerRef.current) return;
 
@@ -49,30 +40,23 @@ const Header = () => {
       }
     };
 
-    const handleScrollEvent = () => {
-      handleScroll();
-      setIsMenuOpen(false);
-    };
-
     const handleClick = (e) => {
       handleMenuToggle(e);
       handleSectionScroll(e);
     };
 
     container.addEventListener("click", handleClick);
-    window.addEventListener("scroll", handleScrollEvent);
 
     return () => {
       container.removeEventListener("click", handleClick);
-      window.removeEventListener("scroll", handleScrollEvent);
     };
-  }, [htmlContent, handleScroll]);
+  }, [htmlContent]);
 
   // 🔹 Renderização
   return (
     <div
       ref={headerRef}
-      className={`header-wrapper ${isVisible ? "visible" : "hidden"} ${isMenuOpen ? "menu-open" : ""}`}
+      className={`header-wrapper ${isMenuOpen ? "menu-open" : ""}`}
     >
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>

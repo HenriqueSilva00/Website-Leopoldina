@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Hammer from "hammerjs";
 
 const History = () => {
@@ -30,7 +30,7 @@ const History = () => {
     setCanScrollNext(Math.abs(transformX) + timelineWidth < totalWidth);
   };
 
-  const scrollTimeline = (direction) => {
+  const scrollTimeline = useCallback((direction) => {
     const timeline = timelineRef.current;
     if (!timeline) return;
 
@@ -45,7 +45,7 @@ const History = () => {
     timeline.style.transform = `translateX(${currentTransform - sign * xScrolling}px)`;
 
     setTimeout(updateArrows, 1000); // espera o transition
-  };
+  }, []);
 
   useEffect(() => {
     const timeline = timelineRef.current;
@@ -80,7 +80,7 @@ const History = () => {
       document.removeEventListener("keydown", keyFn);
       hammer.destroy();
     };
-  }, []);
+  }, [scrollTimeline]);
 
   return (
     <section className="timeline">

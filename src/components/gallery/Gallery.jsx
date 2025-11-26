@@ -32,7 +32,7 @@ const images = [
   },
   {
     id: 5,
-    src: "/assets/fotosGaleria/Centeio.jpg",
+    src: "/assets/fotosGaleria/centeio.jpg",
     alt: "Pão tradicional",
     description:
       "Pão tradicional, com crosta estaladiça e miolo macio, feito em forno de lenha.",
@@ -46,7 +46,7 @@ const images = [
   },
   {
     id: 7,
-    src: "/assets/fotosGaleria/Centeio3.jpg",
+    src: "/assets/fotosGaleria/centeio3.jpg",
     alt: "Bolos tradicionais",
     description:
       "Variedade de bolos típicos, doces e tentadores, para todos os momentos.",

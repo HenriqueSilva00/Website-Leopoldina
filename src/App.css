@@ -1,6 +1,6 @@
 /* Estilos globais */
 body {
-  background-color: #f3e5ab;
+  background-color: #e9dfb7;
   margin: 0;
   font-family: Arial, sans-serif;
   color: aliceblue;
@@ -27,11 +27,6 @@ html {
   text-align: center;
   box-sizing: border-box;
   border-bottom: 4px solid rgba(0, 0, 0, 0.1); /* 🔹 linha fina, semi-transparente */
-}
-
-/* Palete de cores pastel */
-.homepage {
-  background-color: #f3e5ab;
 }
 
 .history {
@@ -64,12 +59,11 @@ html {
 }
 
 .gallery {
-  background-color: #f3e5ab;
   border: 2px solid #d9a441; /* contorno amarelo torrado */
 }
 
 .contacts {
-  background-color: #fff3d9;
+  background-color: #e9dfb7;
 }
 
 /* Títulos e texto */

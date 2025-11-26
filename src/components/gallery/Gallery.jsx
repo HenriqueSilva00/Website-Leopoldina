@@ -5,9 +5,9 @@ const images = [
   {
     id: 1,
     src: "/assets/fotosGaleria/filhosacucarcanela.jpg",
-    alt: "Pão de centeio artesanal",
+    alt: "Filhós com Açúcar e Canela",
     description:
-      "Tradição em cada fatia de pão de centeio, amassado e cozido com amor.",
+      "Filhós quentinhas polvilhadas com açúcar e canela, crocantes por fora e macias por dentro — o sabor tradicional que desperta memórias de infância.",
   },
   {
     id: 2,
@@ -27,8 +27,7 @@ const images = [
     id: 4,
     src: "/assets/fotosGaleria/castanhas.jpg",
     alt: "Castanhas assadas",
-    description:
-      "Castanhas assadas, o sabor do outono, quentinhas e irresistíveis.",
+    description: "Castanhas regionais, o sabor do Outono. ",
   },
   {
     id: 5,
@@ -90,7 +89,7 @@ const images = [
     src: "/assets/fotosGaleria/filhosprincipal.jpg",
     alt: "Filhós com açúcar e canela",
     description:
-      "Filhós caseiras polvilhadas com açúcar e canela, uma delícia que abraça a tradição.",
+      "Filhós caseiras polvilhadas com açúcar, uma delícia que abraça a tradição.",
   },
   {
     id: 14,

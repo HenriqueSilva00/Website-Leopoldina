@@ -131,6 +131,9 @@
 }
 
 @media (max-width: 768px) {
+  .gallery-container {
+    width: 100vw;
+  }
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr); /* mobile: 3 colunas */
   }

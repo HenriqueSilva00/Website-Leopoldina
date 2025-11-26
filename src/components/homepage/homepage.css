@@ -22,7 +22,6 @@
   object-position: 80% center;
   display: block;
 }
-
 /* SECÇÃO INFERIOR */
 .bottom-section {
   display: flex;
@@ -49,6 +48,7 @@
   display: block;
   border-radius: 10px;
   object-position: 40% center;
+  box-shadow: 8px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* IMAGE WRAPPER + HOVER */
@@ -170,6 +170,7 @@
     flex-direction: column;
     width: 100%;
     align-items: stretch;
+    margin: 0;
   }
 
   /* Cada card */
@@ -179,7 +180,7 @@
     overflow: hidden;
     padding-bottom: 0.5rem;
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .bottom-image {
@@ -188,6 +189,39 @@
     aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 12px;
+  }
+
+  .arrow-down {
+    position: absolute;
+    bottom: 1px; /* distância do fundo da imagem */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #5e4b3c;
+    opacity: 0.6;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    padding-top: 0.5rem;
+    cursor: pointer;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .arrow-down:hover {
+    opacity: 1;
+  }
+
+  .arrow-icon {
+    width: 20px; /* ajustar conforme necessário */
+    height: auto;
+    display: block;
+  }
+
+  /* Efeito hover ou overlay ativo */
+  .image-wrapper:hover .arrow-down,
+  .image-wrapper.active .arrow-down {
+    opacity: 0; /* desaparece */
+    transform: translateX(-50%) translateY(-5px); /* pequeno efeito de subida */
   }
 
   .overlay {

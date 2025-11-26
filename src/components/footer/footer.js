@@ -56,6 +56,17 @@ const Footer = () => {
           Livro de Reclamações
         </a>
       </div>
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "1rem",
+          fontSize: "0.85rem",
+          color: "#fff",
+          opacity: 0.8,
+        }}
+      >
+        Designed by Criartecôa, Lda
+      </p>
     </footer>
   );
 };

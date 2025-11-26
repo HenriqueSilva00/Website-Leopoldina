@@ -116,7 +116,7 @@
 }
 
 .schedule-line {
-  margin-left: 1.5rem; /* ligeiro recuo para alinhar sob o "Horário:" */
+  margin-left: 0rem; /* ligeiro recuo para alinhar sob o "Horário:" */
 }
 
 /* ===== Logo dentro do card ===== */
@@ -242,7 +242,7 @@
 
   /* Container do conteúdo */
   .contact-container {
-    width: 90%; /* ← O que pediste */
+    width: 100%; /* ← O que pediste */
     padding: 1rem; /* ← Padding interno */
     margin: 0 auto; /* ← Mantém centrado */
     box-sizing: border-box;

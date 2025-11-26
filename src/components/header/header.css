@@ -88,7 +88,7 @@
 
 /* --- MENU MOBILE HIDDEN IN DESKTOP --- */
 .menu-toggle {
-  display: none; /* 🔥 No desktop, fica sempre oculto */
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -178,17 +178,21 @@
     transform: translateY(-9px) rotate(-45deg);
   }
 
-  /* CONTAINER DO MENU MOBILE */
   .icon_container {
     position: absolute;
-    top: 82px;
+    top: 7rem;
     right: 0;
-
     width: 100%;
-    background-color: #f3e5ab;
+    background-color: #f7ecd0;
+
+    /* separação elegante */
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
     opacity: 0;
     max-height: 0;
+    padding: 0;
     overflow: hidden;
 
     display: flex;
@@ -196,12 +200,19 @@
     align-items: center;
     gap: 12px;
 
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     transition:
-      opacity 0.3s ease,
-      max-height 0.4s ease,
-      transform 0.3s ease,
-      padding 0.3s ease;
+      opacity 0.35s ease,
+      max-height 0.45s ease,
+      padding 0.35s ease,
+      transform 0.35s ease;
+  }
+  /* Quando menu está aberto */
+  .icon_container.active {
+    opacity: 1;
+    max-height: 250px; /* suficiente para o conteúdo */
+    padding: 12px 0;
+    transform: translateY(0);
   }
 
   /* MENU ABERTO */

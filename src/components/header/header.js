@@ -6,7 +6,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef(null);
 
-  // 🔹 Carrega o HTML do header
+  // Carrega HTML externo
   useEffect(() => {
     fetch("/view/header/header.html")
       .then((res) => res.text())
@@ -14,7 +14,7 @@ const Header = () => {
       .catch((err) => console.error("Erro ao carregar HTML do header:", err));
   }, []);
 
-  // 🔹 Eventos de clique (menu + scroll suave)
+  // Eventos: abrir menu + scroll suave
   useEffect(() => {
     if (!htmlContent || !headerRef.current) return;
 
@@ -46,26 +46,33 @@ const Header = () => {
     };
 
     container.addEventListener("click", handleClick);
-
-    return () => {
-      container.removeEventListener("click", handleClick);
-    };
+    return () => container.removeEventListener("click", handleClick);
   }, [htmlContent]);
 
+  // Aplica classe ao body
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add("menu-open");
-    } else {
-      document.body.classList.remove("menu-open");
-    }
+    if (isMenuOpen) document.body.classList.add("menu-open");
+    else document.body.classList.remove("menu-open");
 
-    // Limpeza quando o componente desmontar (boa prática)
-    return () => {
-      document.body.classList.remove("menu-open");
-    };
+    return () => document.body.classList.remove("menu-open");
   }, [isMenuOpen]);
 
-  // 🔹 Renderização
+  useEffect(() => {
+    if (!htmlContent || !headerRef.current) return;
+
+    const interval = setInterval(() => {
+      const iconContainer = headerRef.current.querySelector(".icon_container");
+      if (iconContainer) {
+        if (isMenuOpen) iconContainer.classList.add("active");
+        else iconContainer.classList.remove("active");
+
+        clearInterval(interval); // encontramos, já não precisamos do loop
+      }
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, [htmlContent, isMenuOpen]);
+
   return (
     <div
       ref={headerRef}

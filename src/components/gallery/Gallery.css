@@ -56,6 +56,10 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.gallery-item:hover .zoom-thumb {
+  transform: scale(1.45);
+}
+
 /* === MODAL (VISUALIZAÇÃO EM ZOOM) === */
 .modal {
   position: fixed;
@@ -85,6 +89,17 @@
   color: #fff;
   font-size: 1.1rem;
   font-style: italic;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* zoom inicial */
+.zoom-thumb {
+  transform: scale(1.4);
+  transition: transform 0.3s ease;
 }
 
 /* === ANIMAÇÕES === */

@@ -32,6 +32,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
+  padding-top: 1rem;
 }
 
 .santo-logo {
@@ -97,7 +98,7 @@
     justify-content: space-between;
     align-items: center;
     height: 75px;
-    padding: 0.5rem 0 0rem 0rem;
+    padding: 0.5rem 0rem 0rem 0rem;
     position: sticky;
     top: 0;
     width: 100%;
@@ -106,18 +107,19 @@
 
   /* LOGOS MOBILE */
   .title_container {
+    width: 18rem;
     flex: 1;
     display: flex;
     align-items: center;
   }
 
   .santo-logo {
-    width: 35px;
-    height: auto;
+    width: 3rem;
+    max-height: 5rem;
   }
 
   .title-logo {
-    width: 230px;
+    width: 15rem;
     height: auto;
   }
 
@@ -265,28 +267,25 @@
     height: auto;
   }
 
-  /* Ícones do menu (no tablet são sempre visíveis) */
-  .menu-toggle {
-    display: none;
-  }
-
   .icon_container {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0rem;
+    margin-top: 2rem;
   }
 
   .icon-button {
     background: none;
     border: none;
     color: #000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 1rem 1rem 0rem 0rem;
+    gap: 3px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    padding: 0.5rem 1rem 0rem 0rem;
     transition:
       color 0.2s ease,
       transform 0.2s ease;

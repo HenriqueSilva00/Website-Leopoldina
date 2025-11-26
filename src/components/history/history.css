@@ -223,6 +223,7 @@
     box-sizing: border-box;
     margin: 0 auto; /* centraliza a timeline */
   }
+
   .timeline-header {
     text-align: center;
     width: 100%;

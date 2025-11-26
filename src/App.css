@@ -134,10 +134,6 @@ html {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .section {
-    padding: 40px 5%;
-  }
-
   .section h2 {
     font-size: 1.8rem;
   }
@@ -160,10 +156,6 @@ html {
 
   .title {
     font-size: 20px;
-  }
-
-  .section {
-    padding: 30px 5px;
   }
 
   .history {

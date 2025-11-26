@@ -4,10 +4,10 @@ import "./Gallery.css";
 const images = [
   {
     id: 1,
-    src: "/assets/fotosGaleria/filhosprincipal.jpg",
-    alt: "Filhós com açúcar e canela",
+    src: "/assets/fotosGaleria/filhosacucarcanela.jpg",
+    alt: "Pão de centeio artesanal",
     description:
-      "Filhós caseiras polvilhadas com açúcar e canela, uma delícia que abraça a tradição.",
+      "Tradição em cada fatia de pão de centeio, amassado e cozido com amor.",
   },
   {
     id: 2,
@@ -87,10 +87,10 @@ const images = [
   },
   {
     id: 13,
-    src: "/assets/fotosGaleria/filhosacucarcanela.jpg",
-    alt: "Pão de centeio artesanal",
+    src: "/assets/fotosGaleria/filhosprincipal.jpg",
+    alt: "Filhós com açúcar e canela",
     description:
-      "Tradição em cada fatia de pão de centeio, amassado e cozido com amor.",
+      "Filhós caseiras polvilhadas com açúcar e canela, uma delícia que abraça a tradição.",
   },
   {
     id: 14,
@@ -169,7 +169,12 @@ export default function Gallery() {
             className="gallery-item"
             onClick={() => setSelectedImage(img)}
           >
-            <img src={img.src} alt={img.alt} loading="lazy" />
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              className={[16, 19].includes(img.id) ? "zoom-thumb" : ""}
+            />
           </div>
         ))}
       </div>

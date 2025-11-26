@@ -46,7 +46,7 @@ const images = [
   },
   {
     id: 7,
-    src: "/assets/fotosGaleria/centeio3.jpg",
+    src: "/assets/fotosGaleria/centeios.jpg",
     alt: "Bolos tradicionais",
     description:
       "Variedade de bolos típicos, doces e tentadores, para todos os momentos.",

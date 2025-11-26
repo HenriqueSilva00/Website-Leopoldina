@@ -87,7 +87,7 @@ const images = [
   },
   {
     id: 13,
-    src: "/assets/fotosGaleria/filhosesAcucarCanela.jpg",
+    src: "/assets/fotosGaleria/filhosacucarcanela.jpg",
     alt: "Pão de centeio artesanal",
     description:
       "Tradição em cada fatia de pão de centeio, amassado e cozido com amor.",
@@ -108,14 +108,14 @@ const images = [
   },
   {
     id: 16,
-    src: "/assets/fotosGaleria/tartemaca.jpg",
+    src: "/assets/fotosGaleria/tartemacaamendoa.jpg",
     alt: "Tarte de maçã",
     description:
       "Tarte de maçã fresca, com massa crocante e recheio suculento, irresistível.",
   },
   {
     id: 17,
-    src: "/assets/fotosGaleria/bolachourico.jpg",
+    src: "/assets/fotosGaleria/bolachouricoquente.jpg",
     alt: "Bola de chouriço",
     description:
       "Bola de chouriço tradicional, suculenta e cheia de sabor, perfeita para partilhar.",
@@ -129,14 +129,14 @@ const images = [
   },
   {
     id: 19,
-    src: "/assets/fotosGaleria/bolocanela.jpg",
+    src: "/assets/fotosGaleria/bolocanelamel.jpg",
     alt: "Bolo de canela",
     description:
       "Bolo aromático de canela, fofo e cheio de sabor, perfeito para qualquer ocasião.",
   },
   {
     id: 20,
-    src: "/assets/fotosGaleria/mel.jpg",
+    src: "/assets/fotosGaleria/melnatural.jpg",
     alt: "Mel natural",
     description:
       "Mel puro, dourado e doce, um toque de natureza e energia em cada colher.",

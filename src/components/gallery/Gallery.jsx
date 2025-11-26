@@ -4,7 +4,7 @@ import "./Gallery.css";
 const images = [
   {
     id: 1,
-    src: "/assets/fotosGaleria/filhoses2.jpg",
+    src: "/assets/fotosGaleria/filhosprincipal.jpg",
     alt: "Filhós com açúcar e canela",
     description:
       "Filhós caseiras polvilhadas com açúcar e canela, uma delícia que abraça a tradição.",
@@ -32,7 +32,7 @@ const images = [
   },
   {
     id: 5,
-    src: "/assets/fotosGaleria/centeio.jpg",
+    src: "/assets/fotosGaleria/centeioprincipal.jpg",
     alt: "Pão tradicional",
     description:
       "Pão tradicional, com crosta estaladiça e miolo macio, feito em forno de lenha.",
@@ -46,7 +46,7 @@ const images = [
   },
   {
     id: 7,
-    src: "/assets/fotosGaleria/centeios.jpg",
+    src: "/assets/fotosGaleria/centeiosecundario.jpg",
     alt: "Bolos tradicionais",
     description:
       "Variedade de bolos típicos, doces e tentadores, para todos os momentos.",
@@ -59,42 +59,42 @@ const images = [
   },
   {
     id: 9,
-    src: "/assets/fotosGaleria/centeio.jpg",
+    src: "/assets/fotosGaleria/centeioterciario.jpg",
     alt: "Pão de centeio",
     description:
       "Pão de centeio feito à mão, aroma e sabor que nos levam à tradição.",
   },
   {
     id: 10,
-    src: "/assets/fotosGaleria/figossecos2.jpg",
+    src: "/assets/fotosGaleria/figossecosprincipal.jpg",
     alt: "Figos secos",
     description:
       "Figos secos ao sol, doces naturais, perfeitos para acompanhar um chá ou café.",
   },
   {
     id: 11,
-    src: "/assets/fotosGaleria/filhoses.jpg",
+    src: "/assets/fotosGaleria/filhossecundario.jpg",
     alt: "Filhós douradas",
     description:
       "Filhós douradas e estaladiças, típicas das festas tradicionais, irresistíveis.",
   },
   {
     id: 12,
-    src: "/assets/fotosGaleria/boloestendidos.jpg",
+    src: "/assets/fotosGaleria/boloestendidoprincipal.jpg",
     alt: "Bolo caseiro estendido",
     description:
       "Bolo estendido artesanal, com sabor intenso e textura delicada.",
   },
   {
     id: 13,
-    src: "/assets/fotosGaleria/centeio2.jpg",
+    src: "/assets/fotosGaleria/filhosesAcucarCanela.jpg",
     alt: "Pão de centeio artesanal",
     description:
       "Tradição em cada fatia de pão de centeio, amassado e cozido com amor.",
   },
   {
     id: 14,
-    src: "/assets/fotosGaleria/bolaAzeite.jpg",
+    src: "/assets/fotosGaleria/bolaazeite.jpg",
     alt: "Bola de azeite",
     description:
       "Bola de azeite caseira, dourada e macia, um prazer que não se esquece.",
@@ -115,7 +115,7 @@ const images = [
   },
   {
     id: 17,
-    src: "/assets/fotosGaleria/bolaChourico.jpg",
+    src: "/assets/fotosGaleria/bolachourico.jpg",
     alt: "Bola de chouriço",
     description:
       "Bola de chouriço tradicional, suculenta e cheia de sabor, perfeita para partilhar.",

@@ -94,7 +94,7 @@ const images = [
   },
   {
     id: 14,
-    src: "/assets/fotosGaleria/bolaazeite.jpg",
+    src: "/assets/fotosGaleria/boladeazeitequentinha.jpg",
     alt: "Bola de azeite",
     description:
       "Bola de azeite caseira, dourada e macia, um prazer que não se esquece.",

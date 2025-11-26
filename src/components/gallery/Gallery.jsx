@@ -80,7 +80,7 @@ const images = [
   },
   {
     id: 12,
-    src: "/assets/fotosGaleria/boloestendido2.jpg",
+    src: "/assets/fotosGaleria/boloestendidos.jpg",
     alt: "Bolo caseiro estendido",
     description:
       "Bolo estendido artesanal, com sabor intenso e textura delicada.",
@@ -108,7 +108,7 @@ const images = [
   },
   {
     id: 16,
-    src: "/assets/fotosGaleria/tarteMaca.jpg",
+    src: "/assets/fotosGaleria/tartemaca.jpg",
     alt: "Tarte de maçã",
     description:
       "Tarte de maçã fresca, com massa crocante e recheio suculento, irresistível.",
@@ -122,14 +122,14 @@ const images = [
   },
   {
     id: 18,
-    src: "/assets/fotosGaleria/bolinhos.jpg",
+    src: "/assets/fotosGaleria/bolinhosdoces.jpg",
     alt: "Bolinhos doces",
     description:
       "Bolinhos caseiros, pequenos pedaços de felicidade e tradição.",
   },
   {
     id: 19,
-    src: "/assets/fotosGaleria/boloCanela.jpg",
+    src: "/assets/fotosGaleria/bolocanela.jpg",
     alt: "Bolo de canela",
     description:
       "Bolo aromático de canela, fofo e cheio de sabor, perfeito para qualquer ocasião.",

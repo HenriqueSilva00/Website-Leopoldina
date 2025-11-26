@@ -90,7 +90,7 @@ const images = [
     src: "/assets/fotosGaleria/centeio2.jpg",
     alt: "Pão de centeio artesanal",
     description:
-      "Tradição em cada fatia de pão de centeio, amassado e assado com amor.",
+      "Tradição em cada fatia de pão de centeio, amassado e cozido com amor.",
   },
   {
     id: 14,

@@ -1,21 +1,21 @@
-/* === CABEÇALHO GERAL === */
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* 🔹 Garante alinhamento vertical central */
+  align-items: center;
   padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 1000;
   width: 100%;
   height: 90px;
+  z-index: 1000;
+  background-color: #f3e5ab; /* 🔹 IMPORTANTE para evitar transparências indesejadas */
   box-sizing: border-box;
   transition:
-    transform 0.9s ease,
-    opacity 0.6s ease;
+    transform 0.25s ease,
+    opacity 0.2s ease;
 }
 
-/* Mostra/esconde o cabeçalho */
+/* Mostrar/ocultar header */
 .visible {
   transform: translateY(0);
   opacity: 1;
@@ -26,213 +26,213 @@
   opacity: 0;
 }
 
+/* LOGOS */
 .title_container {
   display: flex;
-  align-items: center; /* alinha verticalmente o logo e o texto */
-  justify-content: center; /* centra tudo na página */
-  gap: 0.8rem; /* espaço entre o logo e o texto */
-  margin: 2rem 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 .santo-logo {
-  width: 35px; /* tamanho do logo */
+  width: 35px;
   height: auto;
-  display: block;
-  margin-top: 10px;
-  margin-left: 45px;
 }
 
 .title-logo {
-  width: 230px; /* tamanho do logo */
+  width: 230px;
   height: auto;
-  display: block;
-  margin-top: 10px;
 }
 
-.title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #5a2d0c;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-/* === ÍCONES (desktop) === */
+/* --- ICONS NAVIGATION (DESKTOP) --- */
 .icon_container {
   display: flex;
   align-items: center;
-  gap: 25px; /* 🔹 Mais espaçamento entre botões */
+  justify-content: center;
+  gap: 25px;
 }
 
 .icon-button {
   background-color: #f3e5ab;
-  color: #000; /* 🔹 Letras pretas */
+  color: #000;
   border: none;
-  border-radius: 8px;
-  padding: 10px 20px; /* 🔹 Botões mais altos e largos */
-  font-size: 18px; /* 🔹 Texto ligeiramente maior */
+  border-radius: 10px;
+  padding: 9px 20px;
+  font-size: 18px;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Espaço entre ícone e texto */
+  display: inline-flex; /* inline-flex ajuda no alinhamento central */
+  align-items: center; /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
+  gap: 10px; /* espaço entre ícone e texto */
+  line-height: 1; /* evita desajustes de altura do texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    all 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .icon-button i {
-  font-size: 16px;
+  font-size: 18px;
+  display: inline-block; /* garante alinhamento vertical */
 }
 
 .icon-button:hover {
-  background-color: #ffd166; /* 🔹 Hover um pouco mais escuro */
-  transform: translateY(-2px); /* 🔹 Pequeno destaque visual */
+  background-color: #ffd166; /* cor mais vibrante */
+  color: #222; /* contraste melhor */
+  transform: translateY(-3px) scale(1.05); /* movimento + ligeiro zoom */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* sombra mais forte */
 }
 
+/* --- MENU MOBILE HIDDEN IN DESKTOP --- */
 .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 32px;
-  height: 24px;
-  position: relative;
+  display: none; /* 🔥 No desktop, fica sempre oculto */
 }
 
-.menu-toggle::before,
-.menu-toggle::after,
-.menu-toggle span {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 3px; /* 🔹 Traço mais grosso */
-  background-color: rgb(0, 0, 0);
-  border-radius: 2px;
-  transition: all 0.2s ease;
-}
-
-/* Traços do ícone */
-.menu-toggle::before {
-  top: 0;
-}
-
-.menu-toggle span {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.menu-toggle::after {
-  bottom: 0;
-}
-
-/* Pequena animação ao clicar (menu aberto) */
-.menu-open .menu-toggle::before {
-  transform: rotate(45deg);
-  top: 50%;
-}
-
-.menu-open .menu-toggle::after {
-  transform: rotate(-45deg);
-  bottom: 50%;
-}
-
-.menu-open .menu-toggle span {
-  opacity: 0;
-}
-/* === MODO MOBILE === */
 @media (max-width: 768px) {
+  /* HEADER */
   .header {
     display: flex;
-    flex-direction: row; /* 🔹 Garante disposição lado a lado */
     justify-content: space-between;
-    align-items: center; /* 🔹 Alinha tudo verticalmente */
-    padding: 0 1rem;
+    align-items: center;
     height: 75px;
+    padding: 0.5rem 0 0rem 0rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
   }
 
+  /* LOGOS MOBILE */
   .title_container {
     flex: 1;
     display: flex;
-    align-items: center; /* 🔹 Centraliza o título verticalmente */
-  }
-
-  .title_container h1 {
-    font-size: 1.5rem; /* 🔹 Reduz o tamanho do texto */
-    max-width: 260px; /* 🔹 Limita a largura para evitar quebra */
-    line-height: 1.1; /* 🔹 Ajusta altura das linhas */
-    text-align: left; /* 🔹 Mantém o alinhamento natural */
-    word-break: break-word; /* 🔹 Evita overflow */
+    align-items: center;
   }
 
   .santo-logo {
-    width: 35px; /* tamanho do logo */
+    width: 35px;
     height: auto;
-    display: block;
-    margin-top: 20px;
-    margin-left: -30px;
   }
 
   .title-logo {
-    width: 230px; /* tamanho do logo */
+    width: 230px;
     height: auto;
-    display: block;
-    margin-top: 20px;
   }
 
+  /* MENU TOGGLE (Hamburger) */
   .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 0.5rem;
+    top: 75%;
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 30px;
+
+    z-index: 2000;
+  }
+
+  .menu-button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+
+  /* BARRAS DO HAMBURGER */
+  .menu-button span {
     display: block;
-    color: #000;
+    width: 80%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
   }
 
+  /* ANIMAÇÃO DO BOTÃO QUANDO ABERTO */
+  .header-wrapper.menu-open .menu-button span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .header-wrapper.menu-open .menu-button span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header-wrapper.menu-open .menu-button span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* CONTAINER DO MENU MOBILE */
   .icon_container {
-    display: none; /* Esconde ícones no mobile */
-    color: #000;
-  }
+    position: absolute;
+    top: 82px;
+    right: 0;
 
-  .menu-open .icon_container {
+    width: 100%;
+    background-color: #f3e5ab;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 75px;
-    right: 0;
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    padding: 20px 0;
     gap: 12px;
+
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      max-height 0.4s ease,
+      transform 0.3s ease,
+      padding 0.3s ease;
   }
 
-  /* 🔹 Título do menu */
-  .menu-title {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  /* MENU ABERTO */
+  .header-wrapper.menu-open .icon_container {
+    opacity: 1;
+    max-height: 500px;
+    padding: 10px 0;
+    transform: translateY(0);
   }
 
+  /* BOTÕES DO MENU */
   .icon-button {
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    padding: 12px 0;
+
     background: none;
     border: none;
-    color: white;
-    font-size: 1.1rem;
-    padding: 11px 0;
-    cursor: pointer;
-    width: 100%;
     text-align: center;
+    font-size: 1.1rem;
+    color: #000;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: none;
     transition:
-      background-color 0.3s ease,
       color 0.3s ease,
       transform 0.2s ease;
   }
 
-  /* 🔹 Efeito hover */
   .icon-button:hover {
-    color: #1d1d1d; /* Texto cinzento claro */
     transform: scale(1.02);
-    height: 100%;
   }
 }
 
@@ -240,51 +240,41 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    justify-content: space-between;
     height: 85px;
+    padding: 0 2rem;
   }
 
+  /* Logo + título */
   .title_container {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center; /* 🔹 Mantém o título centrado */
-    gap: 0.5rem;
-  }
-
-  .title_container h1 {
-    font-size: 2rem; /* 🔹 Maior que no mobile, menor que no desktop */
-    max-width: 340px;
-    line-height: 1.2;
-    text-align: center;
-    letter-spacing: 1px;
-  }
-
-  .title-logo {
-    width: 60px; /* 🔹 Logo ligeiramente maior */
-    height: auto;
-    display: block;
+    justify-content: center;
+    gap: 0.8rem;
   }
 
   .santo-logo {
-    width: 45px;
+    width: 40px;
     height: auto;
-    margin-top: 10px;
-    margin-left: -10px;
   }
 
+  .title-logo {
+    width: 200px;
+    height: auto;
+  }
+
+  /* Ícones do menu (no tablet são sempre visíveis) */
   .menu-toggle {
-    display: none; /* 🔹 Esconde o ícone de menu hambúrguer */
+    display: none;
   }
 
   .icon_container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1.2rem;
+    gap: 0rem;
   }
 
   .icon-button {
@@ -293,18 +283,21 @@
     color: #000;
     font-size: 1.2rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1rem 1rem 0rem 0rem;
     transition:
-      transform 0.2s ease,
-      color 0.2s ease;
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .icon-button i {
+    font-size: 1.1rem;
   }
 
   .icon-button:hover {
     color: #8b4513;
-    transform: scale(1.1);
-  }
-
-  /* 🔹 Ajuste de espaçamentos gerais */
-  .menu-title {
-    display: none; /* não há título de menu no tablet */
+    transform: scale(1.05);
   }
 }

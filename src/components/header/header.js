@@ -21,7 +21,7 @@ const Header = () => {
     const container = headerRef.current;
 
     const handleMenuToggle = (e) => {
-      const toggleBtn = e.target.closest(".menu-toggle");
+      const toggleBtn = e.target.closest(".menu-toggle, .menu-button");
       if (toggleBtn) {
         e.stopPropagation();
         setIsMenuOpen((prev) => !prev);
@@ -51,6 +51,19 @@ const Header = () => {
       container.removeEventListener("click", handleClick);
     };
   }, [htmlContent]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+
+    // Limpeza quando o componente desmontar (boa prática)
+    return () => {
+      document.body.classList.remove("menu-open");
+    };
+  }, [isMenuOpen]);
 
   // 🔹 Renderização
   return (

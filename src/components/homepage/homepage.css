@@ -1,59 +1,43 @@
 .main-container {
   width: 100%;
-  height: 90vh; /* ocupa toda a altura do ecrã */
+  height: 90vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
+/* HERO */
 .hero-section {
   width: 100%;
   height: 55%;
   margin: 0 auto;
   border-radius: 10px;
-  overflow: hidden; /* impede que a imagem ultrapasse os cantos arredondados */
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* garante que a imagem cobre a área sem distorcer */
+  object-fit: cover;
+  object-position: 80% center;
   display: block;
 }
 
-/* Secção inferior (duas colunas) */
+/* SECÇÃO INFERIOR */
 .bottom-section {
   display: flex;
   width: 92vw;
   height: 35%;
   margin: 15px auto;
-  gap: 1rem; /* espaço entre colunas */
+  gap: 1rem;
 }
 
 .left-container {
   width: 60%;
-  padding: 2rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border-radius: 10px;
 }
 
-/* Estilo do texto */
-.bakery-title {
-  font-size: 2rem;
-  color: #8b4513;
-  margin-bottom: 1rem;
-}
-
-.bakery-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 100%;
-  text-align: justify;
-}
-/* Coluna direita (30%) */
 .right-container {
   width: 40%;
   border-radius: 10px;
@@ -62,96 +46,181 @@
 .bottom-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* garante que a imagem cobre a área sem distorcer */
+  object-fit: cover;
   display: block;
+  border-radius: 10px;
+  object-position: 40% center;
+}
+
+/* IMAGE WRAPPER + HOVER */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   border-radius: 10px;
 }
 
-@media (max-width: 1024px) {
+.image-wrapper img {
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.07);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  padding: 1rem;
+  border-radius: inherit;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.overlay h3 {
+  font-size: 1.8rem;
+  color: #4a2c2a;
+  margin-bottom: 0.3rem;
+}
+
+.overlay p {
+  font-size: 1rem;
+  color: #333;
+  width: 80%;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-container {
+    margin-bottom: 0px;
+  }
+
   .bottom-section {
-    gap: 0.8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 1rem;
   }
 
-  .left-container {
-    padding: 1.5rem 2rem;
+  .image-wrapper .overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.65);
   }
 
-  .bakery-title {
-    font-size: 1.8rem;
+  .overlay h3 {
+    max-width: 90%;
+    margin-bottom: 0.3rem;
+    color: #4a2c2a;
   }
 
-  .bakery-description {
-    font-size: 1rem;
+  .overlay p {
+    color: #5a4636;
+    max-width: 95%;
+    margin: 0 auto;
   }
 }
 
-/* Telemóveis */
+/* ---------------------- */
+/* MOBILE */
+/* ---------------------- */
 @media (max-width: 768px) {
+  /* Remove alturas fixas problemáticas */
   .main-container {
-    height: auto; /* permite scroll natural */
+    height: auto;
   }
 
   .hero-section {
-    height: 45vh;
+    height: auto;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
     border-radius: 10px;
   }
 
+  /* Ajuste da secção inferior */
   .bottom-section {
-    flex-direction: column; /* empilha os blocos */
-    height: auto;
-    width: 95vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
   }
 
-  .left-container,
-  .right-container {
-    width: fit-content;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  .left-container {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.2rem;
-    overflow: hidden; /* Impede que o texto ultrapasse o container */
-    word-wrap: break-word; /* Quebra palavras longas */
-  }
-
-  .bakery-title {
-    text-align: center; /* ✅ Centraliza o título */
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem; /* Espaço entre título e texto */
-  }
-
-  .bakery-description {
-    text-align: justify; /* ✅ Justifica o texto */
-    font-size: 0.75rem;
-    line-height: 1.5;
-    margin: 0 auto; /* Centraliza horizontalmente dentro do container */
-    max-width: 100%; /* Garante que o texto não encoste às bordas */
-    overflow-wrap: break-word; /* Evita overflow de palavras longas */
+  /* Cada card */
+  .image-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    padding-bottom: 0.5rem;
   }
 
   .bottom-image {
-    height: 45vh;
-    border-radius: 10px;
-  }
-}
-
-/* Ecrãs muito pequenos */
-@media (max-width: 480px) {
-  .bakery-title {
-    font-size: 1.3rem;
+    width: 100%;
+    height: auto; /* Altura ajusta-se à largura */
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
-  .bakery-description {
-    font-size: 0.9rem;
+  .overlay {
+    position: relative;
+    background: transparent !important;
+    padding: 0.6rem 0 0.4rem;
+    text-align: center;
+
+    /* Novo: transições */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.5s ease,
+      opacity 0.5s ease;
   }
 
-  .bottom-image {
-    height: 200px;
+  .image-wrapper:hover .overlay,
+  .image-wrapper.active .overlay {
+    max-height: 500px; /* altura suficiente para mostrar conteúdo */
+    opacity: 1;
+  }
+
+  .overlay h3 {
+    max-width: 90%;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #4a2c2a;
+  }
+
+  .overlay p {
+    font-size: 0.95rem;
+    color: #5a4636;
+    max-width: 90%;
+    margin: 0 auto;
+    line-height: 1.4;
   }
 }

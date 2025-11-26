@@ -142,11 +142,17 @@ const History = () => {
             região.
           </div>
         </li>
-        <li ref={lastItemRef}>
+        <li>
           <div>
             <time>2024</time> Reconhecimento local pela qualidade e tradição dos
             produtos.
           </div>
+        </li>
+        <li className="last">
+          <div></div>
+        </li>
+        <li className="last" ref={lastItemRef}>
+          <div></div>
         </li>
       </ol>
 

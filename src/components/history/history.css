@@ -2,12 +2,13 @@
   white-space: nowrap;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100%;
   position: relative;
   padding: 40px 20px; /* espaço interno para a "moldura" */
   background-color: #fff3d9;
-  border: 8px double #fbb13c; /* borda dupla em amarelo torrado */
   border-radius: 15px; /* cantos arredondados */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* efeito de profundidade */
+  box-sizing: border-box;
 }
 
 /* Opcional: adicionar efeito de moldura interna */
@@ -18,7 +19,6 @@
   left: 8px;
   right: 8px;
   bottom: 8px;
-  border: 2px solid rgba(255, 255, 255, 0.4); /* linha interna translúcida */
   border-radius: 12px;
   pointer-events: none; /* não interfere em interações */
 }
@@ -73,6 +73,10 @@
   border: 2px solid #d9a441; /* contorno amarelo torrado */
 }
 
+.timeline ol li.last,
+.timeline ol li.last div {
+  background-color: none;
+}
 .timeline ol li:last-child {
   width: 160px; /* mesma largura dos outros itens */
 }
@@ -81,6 +85,7 @@
   margin-left: 14px;
 }
 
+/*bolas*/
 .timeline ol li:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -95,6 +100,13 @@
   border: 2px solid #d9a441; /* Contorno amarelo torrado */
 }
 
+/*bolas*/
+.timeline ol li:not(:last-child)::after {
+  background: #f0a0a0; /* Bola em tom bege */
+  border: 2px solid #d9a441; /* Contorno amarelo torrado */
+}
+
+/*paragrafos nos containers dos eventos*/
 .timeline ol li div {
   position: absolute;
   left: calc(100% + 7px);
@@ -102,10 +114,16 @@
   padding: 15px;
   font-size: 1rem;
   white-space: normal;
-  color: #5a3e1b; /* Marrom escuro para texto */
+  color: #5a1b1b; /* Marrom escuro para texto */
   background: #fff3e0; /* Fundo suave creme */
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*ultimos 2 container invisiveis*/
+.timeline ol li.last div {
+  background: none; /* Fundo suave creme */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
 
 .timeline ol li div::before {
@@ -144,7 +162,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 8px;
-  color: #d9a441; /* Destaque para a data em amarelo torrado */
+  color: #c96932; /* Destaque para a data em amarelo torrado */
   font-family: "Georgia", serif;
 }
 
@@ -182,25 +200,33 @@
   transform: scale(1.2); /* aumenta só a seta, não o botão */
 }
 
+@media (max-width: 1024px) {
+  .timeline ol li.last,
+  .timeline ol li.last div {
+    display: none;
+  }
+}
+
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (max-width: 768px) {
   .timeline {
-    white-space: nowrap;
-    overflow-x: hidden;
+    white-space: normal; /* permite quebra de linha */
+    overflow-x: hidden; /* sem scroll horizontal */
     width: 100%;
+    max-width: 100%; /* nunca excede a tela */
     position: relative;
-    padding: 40px 20px; /* espaço interno para a "moldura" */
+    padding: 20px 15px; /* padding lateral reduzido */
     background-color: #fff3d9;
-    border: 8px double #fbb13c; /* borda dupla em amarelo torrado */
-    border-radius: 15px; /* cantos arredondados */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* efeito de profundidade */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin: 0 auto; /* centraliza a timeline */
   }
-
   .timeline-header {
     text-align: center;
     width: 100%;
-    padding: 0 15px; /* padding lateral */
+    padding: 0 5px; /* padding lateral */
     margin-bottom: 20px;
   }
 
@@ -208,6 +234,7 @@
     font-size: 1.5rem;
     color: #ca4305;
     margin-bottom: 8px;
+    white-space: normal;
   }
 
   .timeline-header p {
@@ -216,6 +243,7 @@
     line-height: 1.4;
     margin: 0 auto;
     max-width: 100%;
+    white-space: normal;
   }
 
   .timeline ol,
@@ -223,19 +251,33 @@
     width: 100%;
     padding: 0 10px;
   }
-
   .timeline ol {
     padding: 0;
-    transform: none !important;
+    margin: 0 auto;
+    list-style: none;
+    width: 100%;
+  }
+
+  .timeline ol::before {
+    content: "";
+    position: absolute;
+    left: 50%; /* centraliza a linha horizontalmente */
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px; /* largura da linha */
+    height: 100%; /* estende por toda a altura do ol */
+    z-index: 0; /* fica atrás dos blocos */
+    background-color: #d9a441;
   }
 
   .timeline ol li {
     display: block;
-    width: 100%; /* ocupa toda a largura do container */
-    height: auto; /* altura dinâmica conforme conteúdo */
-    background: transparent;
-    margin: 0 0 20px; /* espaçamento entre itens */
+    width: 100%; /* ocupa toda a largura disponível */
+    margin: 0 0 100px; /* espaço entre itens */
+    padding: 0;
+    box-sizing: border-box;
   }
+
   .timeline ol li:first-child {
     margin-top: 25px;
   }
@@ -246,32 +288,24 @@
 
   .timeline ol li div {
     position: static;
-    width: 20rem; /* largura máxima do container */
-    height: auto !important;
-    margin: 0 auto 25px;
-    padding: 10px; /* padding interno */
-    box-sizing: border-box; /* inclui padding na largura */
-    word-wrap: break-word; /* garante quebra de texto longo */
-    border: 1px solid #d9a441; /* amarelo torrado */
-    border-radius: 8px; /* cantos arredondados */
-    background-color: #fff3e0; /* fundo bege claro */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* leve sombra para profundidade */
+    width: 100%; /* ocupa 100% do li */
+    max-width: 100%; /* nunca ultrapassa a tela */
+    margin: 0 auto 15px; /* centraliza os blocos */
+    padding: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    border: 1px solid #d9a441;
+    border-radius: 8px;
+    background-color: #fff3e0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .timeline ol li:nth-child(odd) div {
-    transform: none;
+  .timeline ol li:nth-child(odd) div,
+  .timeline ol li:nth-child(even) div {
+    transform: none; /* remove deslocamentos diagonais */
   }
 
-  .timeline ol li:nth-child(odd) div::before,
-  .timeline ol li:nth-child(even) div::before {
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-    border: none;
-    border-left: 1px solid rgb(0, 0, 0);
-    height: 25px;
-  }
-
+  /* esconder elementos decorativos desnecessários no mobile */
   .timeline ol li:last-child,
   .timeline ol li:nth-last-child(2) div::before,
   .timeline ol li:not(:last-child)::after,

@@ -45,10 +45,10 @@ const images = [
   },
   {
     id: 7,
-    src: "/assets/fotosGaleria/centeiosecundario.jpg",
-    alt: "Bolos tradicionais",
+    src: "/assets/fotosGaleria/bolaazeite.jpg",
+    alt: "Bola de Azeite",
     description:
-      "Variedade de bolos típicos, doces e tentadores, para todos os momentos.",
+      "Bola tradicional de azeite, de massa fofa e sabor autêntico, preparada com azeite regional para um toque rústico e irresistível.",
   },
   {
     id: 8,
@@ -80,9 +80,9 @@ const images = [
   {
     id: 12,
     src: "/assets/fotosGaleria/boloestendidoprincipal.jpg",
-    alt: "Bolo caseiro estendido",
+    alt: "Bola de Chouriço",
     description:
-      "Bolo estendido artesanal, com sabor intenso e textura delicada.",
+      "Bola de chouriça tradicional, recheada com chouriço regional e massa macia, perfeita para saborear em qualquer momento.",
   },
   {
     id: 13,

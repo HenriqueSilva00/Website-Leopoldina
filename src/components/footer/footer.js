@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
 
       {/* Texto e links */}
-      <p>© 2025 Leopoldina Website. Todos os direitos reservados.</p>
+      <p>© 2025 Sabores Caseiros. Todos os direitos reservados.</p>
 
       <div className="footer-links">
         <a

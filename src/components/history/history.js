@@ -34,17 +34,30 @@ const History = () => {
     const timeline = timelineRef.current;
     if (!timeline) return;
 
-    const sign = direction === "prev" ? -1 : 1;
+    const timelineWidth = timeline.offsetWidth;
+    const totalWidth = timeline.scrollWidth;
+
+    const maxTranslate = 0; // início
+    const minTranslate = -(totalWidth - timelineWidth); // fim
+
     const currentTransform = timeline.style.transform
       ? parseInt(
           timeline.style.transform.replace(/translateX\((-?\d+)px\)/, "$1")
         )
       : 0;
 
-    timeline.style.transition = "transform 1s";
-    timeline.style.transform = `translateX(${currentTransform - sign * xScrolling}px)`;
+    const move = direction === "prev" ? xScrolling : -xScrolling;
 
-    setTimeout(updateArrows, 1000); // espera o transition
+    let newTranslate = currentTransform + move;
+
+    // 🔒 CLAMP
+    if (newTranslate > maxTranslate) newTranslate = maxTranslate;
+    if (newTranslate < minTranslate) newTranslate = minTranslate;
+
+    timeline.style.transition = "transform 0.6s ease";
+    timeline.style.transform = `translateX(${newTranslate}px)`;
+
+    setTimeout(updateArrows, 600);
   }, []);
 
   useEffect(() => {

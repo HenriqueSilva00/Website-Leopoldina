@@ -176,7 +176,6 @@
   /* Cada card */
   .image-wrapper {
     width: 100%;
-    border-radius: 12px;
     overflow: hidden;
     padding-bottom: 0.5rem;
     position: relative;
@@ -255,12 +254,6 @@
     height: 40px; /* altura do efeito */
     pointer-events: none;
     border-radius: inherit;
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.2),
-      /* transparente/branco suave */ rgba(255, 255, 255, 0)
-        /* desaparece no topo do gradiente */
-    );
     transition: opacity 0.3s ease;
   }
 

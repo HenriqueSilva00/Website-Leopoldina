@@ -49,29 +49,22 @@ const Header = () => {
     return () => container.removeEventListener("click", handleClick);
   }, [htmlContent]);
 
-  // Aplica classe ao body
   useEffect(() => {
-    if (isMenuOpen) document.body.classList.add("menu-open");
-    else document.body.classList.remove("menu-open");
-
-    return () => document.body.classList.remove("menu-open");
+    if (isMenuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
   }, [isMenuOpen]);
-
+  
   useEffect(() => {
-    if (!htmlContent || !headerRef.current) return;
-
-    const interval = setInterval(() => {
-      const iconContainer = headerRef.current.querySelector(".icon_container");
-      if (iconContainer) {
-        if (isMenuOpen) iconContainer.classList.add("active");
-        else iconContainer.classList.remove("active");
-
-        clearInterval(interval); // encontramos, já não precisamos do loop
-      }
-    }, 30);
-
-    return () => clearInterval(interval);
-  }, [htmlContent, isMenuOpen]);
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isMenuOpen]);
+  
 
   return (
     <div

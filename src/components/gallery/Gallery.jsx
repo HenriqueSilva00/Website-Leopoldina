@@ -25,9 +25,9 @@ const images = [
   },
   {
     id: 4,
-    src: "/assets/fotosGaleria/castanhas.jpg",
-    alt: "Castanhas assadas",
-    description: "Castanhas regionais, o sabor do Outono. ",
+    src: "/assets/fotosGaleria/marmelada.jpg",
+    alt: "Marmelada artesanal",
+    description: "Marmelada tradicional, doce e preparada de forma artesanal.",
   },
   {
     id: 5,
@@ -60,8 +60,8 @@ const images = [
     id: 9,
     src: "/assets/fotosGaleria/centeioterciario.jpg",
     alt: "Pão de centeio",
-    description:
-      "Pão de centeio feito à mão, aroma e sabor que nos levam à tradição.",
+    description: "Pão de centeio feito à mão, aroma e sabor que nos levam à tradição.",
+    className: "zoom-up"
   },
   {
     id: 10,

@@ -60,6 +60,10 @@
   transform: scale(1.45);
 }
 
+.gallery-item img.zoom-up {
+  transform: scale(1.5) translateY(-20px);
+}
+
 /* === MODAL (VISUALIZAÇÃO EM ZOOM) === */
 .modal {
   position: fixed;

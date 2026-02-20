@@ -201,6 +201,11 @@
     flex-shrink: 0;
   }
 
+
+.contact-info {
+  margin-left: 50px;
+}
+
   /* 🔹 Títulos e texto */
   .contact-header h2 {
     font-size: 1.8rem;
@@ -222,7 +227,7 @@
   }
 
   .contact-wraper img {
-    width: 350px;
+    width: 250px;
   }
 }
 

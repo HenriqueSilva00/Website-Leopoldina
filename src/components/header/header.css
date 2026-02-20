@@ -185,19 +185,20 @@
     left: 0;
     width: 100%;
     background-color: #dacea1;
-
+    gap: 0px;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    transform: translateY(-15px);
+  
     opacity: 0;
     pointer-events: none;
-
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 0.25s ease;
+  
+    transition: 
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
   }
+  
 
   .header-wrapper.menu-open .icon_container {
     transform: translateY(0);

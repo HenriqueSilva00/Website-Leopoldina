@@ -61,12 +61,21 @@ const App = () => {
 
       <Footer />
 
-      {/* Scroll to Top */}
-      {showScroll && (
-        <button className="scrollToTop" onClick={scrollToTop}>
-          ↑
-        </button>
-      )}
+      <button
+        className={`scrollToTop ${showScroll ? "show" : ""}`}
+        onClick={scrollToTop}
+      >
+        ↑
+      </button>
+
+      <a
+        href="https://wa.me/351966967750?text=Olá,%20quero%20mais%20informações"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`whatsapp-button ${showScroll ? "show" : ""}`}
+      >
+        <img src="/assets/whatsappicon.png" alt="WhatsApp" />
+      </a>
     </div>
   );
 };

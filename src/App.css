@@ -116,6 +116,53 @@ html {
   transform: translateY(-3px);
 }
 
+/* Botão WhatsApp flutuante */
+.whatsapp-button {
+  position: fixed;
+  bottom: 90px; /* acima do scrollToTop */
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.whatsapp-button img {
+  width: 80px;
+  height: 80px;
+}
+
+.scrollToTop,
+.whatsapp-button {
+  position: fixed;
+  transform: translateX(100px); /* começa fora da direita */
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  z-index: 1000;
+}
+
+/* Classe para mostrar */
+.scrollToTop.show,
+.whatsapp-button.show {
+  transform: translateX(0); /* desliza para dentro */
+  opacity: 1;
+}
+
 @media (max-width: 1024px) {
   .history {
     min-height: 75vh;

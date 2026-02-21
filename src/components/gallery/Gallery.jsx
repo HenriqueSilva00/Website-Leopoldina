@@ -60,8 +60,9 @@ const images = [
     id: 9,
     src: "/assets/fotosGaleria/centeioterciario.jpg",
     alt: "Pão de centeio",
-    description: "Pão de centeio feito à mão, aroma e sabor que nos levam à tradição.",
-    className: "zoom-up"
+    description:
+      "Pão de centeio feito à mão, aroma e sabor que nos levam à tradição.",
+    className: "zoom-up",
   },
   {
     id: 10,

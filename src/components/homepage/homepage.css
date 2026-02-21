@@ -243,6 +243,7 @@
   .image-wrapper.active .overlay {
     max-height: 500px; /* altura suficiente para mostrar conteúdo */
     opacity: 1;
+    pointer-events: auto;
   }
 
   /* Gradiente suave para indicar mais conteúdo */

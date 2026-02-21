@@ -32,9 +32,8 @@
 }
 
 .contact-container:hover {
-  transform: scale(1.01);
   background-color: #f9fafb;
-  box-shadow: 0 12px 150px rgba(0, 0, 0, 0.25); /* sombra mais profunda e ampla */
+  box-shadow: 0 12px 150px rgba(0, 0, 0, 0.1); /* sombra mais profunda e ampla */
 }
 
 /* Lado esquerdo - Mapa */
@@ -201,10 +200,9 @@
     flex-shrink: 0;
   }
 
-
-.contact-info {
-  margin-left: 50px;
-}
+  .contact-info {
+    margin-left: 50px;
+  }
 
   /* 🔹 Títulos e texto */
   .contact-header h2 {

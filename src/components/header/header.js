@@ -56,7 +56,7 @@ const Header = () => {
       document.body.classList.remove("menu-open");
     }
   }, [isMenuOpen]);
-  
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -64,7 +64,6 @@ const Header = () => {
       document.body.style.overflow = "";
     }
   }, [isMenuOpen]);
-  
 
   return (
     <div

@@ -62,6 +62,20 @@ html {
   border: 2px solid #d9a441; /* contorno amarelo torrado */
 }
 
+.fullWidthBanner {
+  width: 100vw; /* ocupa a largura total do ecrã */
+  margin-left: calc(-50vw + 50%); /* remove limitação do container */
+  height: 200px;
+  overflow: hidden;
+}
+
+.fullWidthBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .contacts {
   background-color: #e9dfb7;
 }
@@ -124,6 +138,10 @@ html {
     opacity: 0.8; /* opcional: suaviza a imagem */
     z-index: 0;
   }
+
+  .fullWidthBanner {
+    height: 200px;
+  }
 }
 
 /* Responsividade */
@@ -158,6 +176,10 @@ html {
 
   .history::before {
     background: none;
+  }
+
+  .fullWidthBanner {
+    height: 140px;
   }
 
   .button {

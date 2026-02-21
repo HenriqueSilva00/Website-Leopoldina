@@ -2,7 +2,7 @@
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .gallery-header {
@@ -30,7 +30,7 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 colunas no desktop */
-  gap: 1rem;
+  gap: 0.4rem;
 }
 
 .gallery-item {
@@ -137,9 +137,19 @@
 @media (max-width: 768px) {
   .gallery-container {
     width: 100vw;
+    padding: 0 5px;
   }
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr); /* mobile: 3 colunas */
+    gap: 3px; /* menor espaço entre imagens */
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px; /* atualmente */
+    transition: transform 0.3s ease;
   }
 
   .gallery-header h2 {

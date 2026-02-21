@@ -5,6 +5,7 @@
   "dependencies": {
     "cra-template": "1.2.0",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^12.34.3",
     "hammerjs": "^2.0.8",
     "primeicons": "^7.0.0",
     "react": "^19.0.0",

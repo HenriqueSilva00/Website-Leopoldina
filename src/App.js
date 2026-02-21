@@ -50,6 +50,10 @@ const App = () => {
           <Gallery />
         </section>
 
+        <section className="fullWidthBanner">
+          <img src="/assets/Espigas.png" alt="Banner contactos" />
+        </section>
+
         <section id="contacts" className="section contacts">
           <Contacts />
         </section>

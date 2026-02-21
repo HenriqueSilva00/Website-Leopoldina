@@ -23,16 +23,22 @@ const Homepage = () => {
         const arrow = wrapper.querySelector(".arrow-down");
         if (!arrow) return;
 
-        arrow.addEventListener("click", () => {
+        // Remove event listener antigo para não duplicar
+        arrow.replaceWith(arrow.cloneNode(true));
+        const newArrow = wrapper.querySelector(".arrow-down");
+
+        newArrow.addEventListener("click", (e) => {
+          e.stopPropagation();
+
           const isActive = wrapper.classList.contains("active");
 
           // Fecha todos os outros
           wrappers.forEach((w) => w.classList.remove("active"));
 
-          // Se não estava aberto, abre o clicado
+          // Alterna o próprio wrapper
           if (!isActive) {
             wrapper.classList.add("active");
-          }
+          } // se estava ativo, não adiciona → fecha
         });
       });
     };

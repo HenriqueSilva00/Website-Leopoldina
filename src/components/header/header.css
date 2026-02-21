@@ -54,36 +54,51 @@
 }
 
 .icon-button {
-  background-color: #e9dfb7;
-  color: #000;
+  background: transparent;
   border: none;
-  border-radius: 10px;
-  padding: 9px 20px;
-  font-size: 18px;
-  font-weight: 700;
+  box-shadow: none;
+  padding: 6px 10px;
+
+  color: #444;
+  font-size: 16px;
+  font-weight: 400;
+
   cursor: pointer;
-  display: inline-flex; /* inline-flex ajuda no alinhamento central */
-  align-items: center; /* centra verticalmente */
-  justify-content: center; /* centra horizontalmente */
-  gap: 10px; /* espaço entre ícone e texto */
-  line-height: 1; /* evita desajustes de altura do texto */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  position: relative; /* importante para o ::after */
   transition:
-    all 0.3s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    color 0.3s ease,
+    transform 0.25s ease;
 }
 
-.icon-button i {
-  font-size: 18px;
-  display: inline-block; /* garante alinhamento vertical */
+/* Linha inferior */
+.icon-button::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 0%;
+  height: 2px;
+  background-color: #d9a441; /* laranja */
+
+  transition: width 0.3s ease;
 }
 
+/* Hover mantém o teu efeito + ativa underline */
 .icon-button:hover {
-  background-color: #ffd166; /* cor mais vibrante */
-  color: #222; /* contraste melhor */
-  transform: translateY(-3px) scale(1.05); /* movimento + ligeiro zoom */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* sombra mais forte */
+  color: #d9a441;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Expande do centro para os lados */
+.icon-button:hover::after {
+  width: 100%;
 }
 
 /* --- MENU MOBILE HIDDEN IN DESKTOP --- */
@@ -165,70 +180,69 @@
       opacity 0.25s ease;
   }
 
-  /* ANIMAÇÃO DO BOTÃO QUANDO ABERTO */
   .header-wrapper.menu-open .menu-button span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(10px) rotate(405deg); /* 360 + 45 */
   }
 
   .header-wrapper.menu-open .menu-button span:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0);
   }
 
   .header-wrapper.menu-open .menu-button span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-405deg);
   }
 
   .icon_container {
-    position: absolute;
-    top: 7.8rem;
-    right: 0;
-    left: 0;
+    position: fixed; /* ocupa o ecrã todo */
+    inset: 0; /* top:0 right:0 bottom:0 left:0 */
     width: 100%;
-    background-color: #dacea1;
-    gap: 0px;
-  
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-  
+    justify-content: center; /* centra vertical */
+    align-items: center; /* centra horizontal */
+    gap: 35px;
+
+    background: transparent; /* sem fundo */
+
     opacity: 0;
     pointer-events: none;
-  
-    transition: 
-      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s ease;
-  }
-  
+    transform: scale(0.98);
 
+    transition:
+      opacity 0.3s ease,
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Quando menu está aberto */
   .header-wrapper.menu-open .icon_container {
-    transform: translateY(0);
-    opacity: 1;
+    opacity: 1.2;
     pointer-events: auto;
+    transform: scale(1);
   }
 
-  /* BOTÕES DO MENU */
   .icon-button {
-    width: 100%;
-    padding: 18px 0;
-
     background: none;
     border: none;
-    text-align: center;
-    font-size: 1.1rem;
+    padding: 0;
+
+    font-size: 1.2rem; /* maior */
+    font-weight: 500;
+    letter-spacing: 1px;
+
     color: #000;
     cursor: pointer;
 
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: none;
     transition:
       color 0.3s ease,
-      transform 0.2s ease;
+      transform 0.25s ease;
   }
 
   .icon-button:hover {
-    transform: scale(1.06);
+    color: #ff8c00;
+    transform: scale(1.08);
   }
 }
 
